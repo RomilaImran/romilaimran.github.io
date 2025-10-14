@@ -15,7 +15,7 @@
         <h1>Investigating Whole-scalp Accuracy-specific Neural Correlates Underlying Reinforcement Learning</h1>
         
         <p class="intro-paragraph">
-            While the role of positive feedback in reinforcement learning (e.g., maintain strategy) is well-characterized, the exact function of negative (incorrect) feedback remains ambiguous, variously suggested to serve as performance monitoring, a signal for strategy change, or simply an inverted form of positive feedback. Resolving this ambiguity was a key goal. Second, existing research is limited by its heavy reliance on univariate Event-Related Potentials (ERPs), which overemphasize individual electrode activity and neglect complex, network-level brain processes that arise from several overlapping ERPs. Since learning is a dynamic and distributed task, this approach risks overlooking crucial signals. Therefore, the primary objective of this project was to overcome these methodological limitations by employing a multivariate, whole-scalp approach to identify distinct neural correlates for positive and negative feedback, and subsequently to correlate these specific neural signatures with the change in the learning rate  to determine their functional relevance in adaptive learning.
+            While the role of positive feedback in reinforcement learning (e.g., maintain strategy) is well-characterized, the exact function of negative (incorrect) feedback remains ambiguous, variously suggested to serve as performance monitoring, a signal for strategy change, or simply an inverted form of positive feedback. Resolving this ambiguity was a key goal. Second, existing research is limited by its heavy reliance on univariate Event-Related Potentials (ERPs), which overemphasize individual electrode activity and neglect complex, network-level brain processes that arise from several overlapping ERPs. Since learning is a dynamic and distributed task, this approach risks overlooking crucial signals. Therefore, the primary objective of this project was to overcome these methodological limitations by employing a multivariate, whole-scalp approach to identify distinct neural correlates for positive and negative feedback, and subsequently to correlate these specific neural signatures with the change in the learning rate ($\Delta\alpha$) to determine their functional relevance in adaptive learning.
         </p>
     </section>
 
@@ -33,14 +33,14 @@
         </div>
 
         <p>
-            The trial data utilized for this study was collected from 22 right-handed participants (ages 18-29), who performed a two-alternative forced-choice (2AFC) task over three consecutive days at the University of Leeds. The task required participants to differentiate between visual, auditory, and audiovisual stimuli (V, A, and AV) of either a car or a face. Each participant completed 216 trials daily, totaling 648 trials across the experiment. Stimulus clarity was systematically varied using low (32.5%) and high (37.6%) phase coherence, with immediate, valence-specific feedback (smiling or frowning cartoon scientist) provided upon response. Neural activity was recorded from 64 electrodes placed according to the International 10-20 system at a 1000 Hz sampling rate, yielding a substantial total of 912,384 individual electrode recordings across all participants and trials. To isolate the neural correlates of decision-making and feedback processing, the EEG data was response-locked, setting 0 ms to the simultaneous occurrence of the participant's keypress and the onset of feedback. The analysis subsequently focused on the 450 ms pre-response to 1000 ms post-response window, utilizing only Day 1 and Day 3 data to maximize the contrast in learning progression.
+            The trial data utilized for this study was collected from **22 right-handed participants** (ages 18-29), who performed a two-alternative forced-choice (2AFC) task over three consecutive days at the University of Leeds. The task required participants to differentiate between visual, auditory, and audiovisual stimuli (V, A, and AV) of either a car or a face. Each participant completed 216 trials daily, totaling 648 trials across the experiment. Stimulus clarity was systematically varied using low (32.5%) and high (37.6%) phase coherence, with immediate, valence-specific feedback (smiling or frowning cartoon scientist) provided upon response. Neural activity was recorded from **64 electrodes** placed according to the International 10-20 system at a $1000$ Hz sampling rate, yielding a substantial total of **912,384 individual electrode recordings** across all participants and trials. To isolate the neural correlates of decision-making and feedback processing, the EEG data was **response-locked**, setting $0$ ms to the simultaneous occurrence of the participant's keypress and the onset of feedback. The analysis subsequently focused on the $450$ ms pre-response to $1000$ ms post-response window, utilizing only Day 1 and Day 3 data to maximize the contrast in learning progression.
         </p>
         
         <p>
-            Multivariate neural signatures were deduced using Linear Discriminant Analysis (LDA) classifiers, trained separately on correct and incorrect whole-scalp EEG activity to identify features best distinguishing between learning states on Day 1 and Day 3. The classifier worked by optimizing a hyperplane in sequential 70 ms time windows to maximize separation between the two days. The performance of this distinction was measured by the Az score (Area Under the ROC Curve); time points with high Az scores indicate a neural correlate where significant learning-related change occurred. The classifier's continuous output, the discriminant score (y), was extracted as the neural signature. These signatures were spatially interpreted using scalp maps derived from the classifier's weight vector (importance of each electrode) via Haufe's transformation over the \mathbf{-450} ms pre-response to \mathbf{1000} ms post-response period.
+            Multivariate neural signatures were deduced using Linear Discriminant Analysis (LDA) classifiers, trained separately on correct and incorrect whole-scalp EEG activity to identify features best distinguishing between learning states on Day 1 and Day 3. The classifier worked by optimizing a hyperplane in sequential $70$ ms time windows to maximize separation between the two days. The performance of this distinction was measured by the **Az score** (Area Under the ROC Curve); time points with high Az scores indicate a neural correlate where significant learning-related change occurred. The classifier's continuous output, the discriminant score (**y**), was extracted as the neural signature. These signatures were spatially interpreted using scalp maps derived from the classifier's weight vector (importance of each electrode) via Haufe's transformation over the $\mathbf{-450}$ ms pre-response to $\mathbf{1000}$ ms post-response period.
         </p>
         <p>
-            To quantify the behavioral aspect of learning, a Reinforcement Learning Drift-Diffusion Model (RLDDM) was employed, which extends the standard DDM to include the impact of feedback (Q-learning) on future decisions. This model estimated the learning rate  for each participant, a core parameter quantifying a participant's responsiveness to reward. The behavioral measure of adaptive learning was calculated as the change in learning rate  between Day 3 and Day 1. The functional relevance of the neural correlates was then determined by using Pearson's correlation to test for a linear relationship between the mean discriminant score (mean y) at the highest Az peaks and the magnitude of adaptive learning .
+            To quantify the behavioral aspect of learning, a Reinforcement Learning Drift-Diffusion Model (RLDDM) was employed, which extends the standard DDM to include the impact of feedback (Q-learning) on future decisions. This model estimated the **learning rate ($\alpha$)** for each participant, a core parameter quantifying a participant's responsiveness to reward. The behavioral measure of adaptive learning was calculated as the **change in learning rate ($\Delta\alpha$)** between Day 3 and Day 1. The functional relevance of the neural correlates was then determined by using Pearson's correlation to test for a linear relationship between the mean discriminant score (**mean y**) at the highest Az peaks and the magnitude of adaptive learning ($\Delta\alpha$).
         </p>
 
         <h3>III. Technical Methodology & Skills</h3>
@@ -48,57 +48,47 @@
         <ul>
             <li>Technique: A supervised single-trial analysis using Linear Discriminant Analysis (LDA) was employed to deduce multivariate neural signatures.</li>
             <li>Process: Separate classifiers were trained to identify whole-scalp spatiotemporal EEG activity that best discriminated between learning on Day 1 and Day 3 for both correct and incorrect trials.</li>
-            <li>Output: The continuous classifier output (y), or discriminant score, was extracted as the neural signature for correlation.</li>
+            <li>Output: The continuous classifier output (**y**), or discriminant score, was extracted as the neural signature for correlation.</li>
         </ul>
 
         <h4>2. Behavioral Modeling (Computational Neuroscience):</h4>
         <ul>
             <li>A Reinforcement Learning Drift-Diffusion Model (RLDDM) was used, which models both decision-making (evidence accumulation) and learning-related parameters.</li>
-            <li>Focus Parameter: The RLDDM's learning rate  was derived to quantify how responsive a participant was to feedback, as this parameter is highly relevant to neural processes that update belief structures based on feedback.</li>
-            <li>Measure of Adaptation: The change in learning rate  between Day 1 and Day 3 was calculated and used as the behavioral measure of adaptive learning.</li>
+            <li>Focus Parameter: The RLDDM's learning rate ($\alpha$) was derived to quantify how responsive a participant was to feedback, as this parameter is highly relevant to neural processes that update belief structures based on feedback.</li>
+            <li>Measure of Adaptation: The change in learning rate ($\Delta\alpha$) between Day 1 and Day 3 was calculated and used as the behavioral measure of adaptive learning.</li>
+            
         </ul>
 
         <h4>3. Functional Correlation:</h4>
         <ul>
-            <li>The neural signature (y) was correlated with the change in the learning rate  using Pearson's correlation to establish functional relevance.</li>
+            <li>The neural signature (**y**) was correlated with the change in the learning rate ($\Delta\alpha$) using Pearson's correlation to establish functional relevance.</li>
         </ul>
     </section>
 
     <section id="results">
-        <h2>Key Findings</h2>
+        <h2>Findings</h2>
         <p>
-            The study found that neural activity corresponding to positive feedback was a strong computational marker for learning, while negative feedback activity, surprisingly, was not functionally correlated with the rate of behavioral adaptation.
+            Based on the **Multivariate Linear Discriminant Analysis (LDA)** of whole-scalp activity, four primary neural correlates (Az scores) were identified: **C1** ($\mathbf{-319}$ ms, pre-response correct), **I1** ($\mathbf{-409}$ ms, pre-response incorrect), **C2** ($\mathbf{391}$ ms, post-response correct), and **I2** ($\mathbf{581}$ ms, post-response incorrect), alongside signals at the feedback onset ($\mathbf{C0/I0}$ at $0$ ms).
+            
+            Spatially, correct trials exhibited consistent and compact signals, transitioning from **occipital activity** at feedback onset ($0$ ms) to **frontoparietal regions** post-response ($\sim 150$ to $950$ ms). Conversely, incorrect trials yielded more diffused signals with notable **right-lateralized frontal activity** post-response, indicative of heightened frontal control and affective processing.
+            
+            When assessing functional relevance by correlating these signatures with the change in the learning rate ($\Delta\alpha$), **positive feedback correlates (C1 and C0) proved highly relevant**, showing a significant correlation with $\Delta\alpha_c$ across both Day 1 and Day 3. This enduring correlation suggests that these signals, particularly the C1 and C0 activity which involves occipital regions and may reflect anticipatory prediction or confidence, actively **track adaptive learning progression**.
+            
+            The post-response correlate, C2, was only relevant on Day 1, suggesting it captures the initial, greater need for cognitive updating (a P3b-like response) that diminishes as learning becomes automated. Crucially, none of the **incorrect feedback correlates (I1, I0, I2) showed a significant linear correlation** with $\Delta\alpha_i$, implying they do not linearly track the magnitude of learning adaptation, despite their distinct spatial patterns (e.g., right frontal/parietal activity) suggesting systemic involvement in attention and conflict monitoring.
         </p>
+        
         <div class="image-row" style="display: flex; justify-content: center;">
             <div class="image-container">
                 <img src="images/result.PNG" alt="Figure 3: Whole-scalp topographical map showing regions of heightened neural activity during accurate feedback processing." class="project-image" width="550" height="500">
                 <img src="images/plot.PNG" alt="Figure 4: Bar graph illustrating differences in specific ERP components for accurate vs. inaccurate outcomes." class="project-image" width="500" height="480">
             </div>
         </div>
-
-        <h3>IV. Key Findings</h3>
-        <h4>Positive Feedback Functional Relevance:</h4>
-        <ul>
-            <li>The pre-feedback (C1 at -319 ms) and simultaneous feedback (C0 at 0 ms) correlates for correct trials were significantly and functionally relevant to adaptive learning on both Day 1 and Day 3 (p < 0.05).</li>
-            <li>This suggests that as learning progresses, participants develop accurate internal predictions, and the brain appears to be updating beliefs and registering the outcome's significance at the time of feedback (0 ms).</li>
-        </ul>
-
-        <h4>Negative Feedback Conclusion:</h4>
-        <ul>
-            <li>No neural correlates for negative (incorrect) feedback (I1, I0, I2) were found to be significantly correlated with the change in learning rate  across any time point.</li>
-        </ul>
-        <p>
-            These findings suggest that the brain not only registers the outcome of a learning trial but also
-            generates specific, distributed neural signals reflecting the accuracy of the decision, which
-            are crucial for subsequent behavioral adjustments.
-        </p>
     </section>
 
     <section id="conclusion">
         <h2>Conclusion and Impact</h2>
-        <h3>V. Conclusion & Impact</h3>
         <p>
-            The results provide strong evidence that whole-scalp neural correlates specific to positive feedback track the magnitude of adaptive learning. The lack of functional relevance for negative feedback correlates supports the hypothesis that its role is shifted towards monitoring or signaling a strategy change rather than directly governing the rate of learning adaptation, as is the case with positive feedback. This work validates the utility of multivariate whole-scalp analysis in providing comprehensive conclusions about the neural processes underlying reinforcement learning. Future work will focus on refining these correlates and exploring their causal roles using brain stimulation techniques.
+            The results provide **strong evidence that whole-scalp neural correlates specific to positive feedback track the magnitude of adaptive learning**. The lack of functional relevance for negative feedback correlates supports the hypothesis that its role is shifted towards **monitoring or signaling a strategy change** rather than directly governing the rate of learning adaptation, as is the case with positive feedback. This work validates the utility of multivariate whole-scalp analysis in providing comprehensive conclusions about the neural processes underlying reinforcement learning. Future work will focus on refining these correlates and exploring their causal roles using brain stimulation techniques.
         </p>
     </section>
 </main>
