@@ -67,45 +67,48 @@
             }
         </style>
 
-        <h2>Technique</h2>
+       <section id="methodology">
+    <h2>Technique</h2>
 
-        <p>
-            This project integrated <b>machine learning</b> and <b>advanced computational modeling</b> to link brain activity (EEG) with behavioral adaptation, moving beyond traditional univariate methods.
-        </p>
-        <p>
-            Multivariate neural signatures were deduced using <b>Linear Discriminant Analysis (LDA)</b> classifiers, trained separately on correct and incorrect whole-scalp EEG activity to identify features best distinguishing between learning states on Day 1 and Day 3. The classifier worked by optimizing a hyperplane in sequential 70 ms time windows to maximize separation between the two days. The performance of this distinction was measured by the <b>Az score</b> (Area Under the ROC Curve); time points with high Az scores indicate a neural correlate where significant learning-related change occurred. The classifier's continuous output, the <b>discriminant score</b>, was extracted as the neural signature. These signatures were spatially interpreted using scalp maps derived from the classifier's weight vector (importance of each electrode) via <b>Haufe's transformation</b> over the <b>-450 ms pre-response to 1000 ms post-response</b> period.
-        </p>
+    <div style="display: flex; align-items: flex-start; gap: 20px;">
+        <div style="flex: 1; min-width: 400px;">
+            <p>
+                This project integrated <b>machine learning</b> and <b>advanced computational modeling</b> to link brain activity (EEG) with behavioral adaptation, moving beyond traditional univariate methods.
+            </p>
+            
+            <p>
+                Multivariate neural signatures were deduced using <b>Linear Discriminant Analysis (LDA)</b> classifiers, trained separately on correct and incorrect whole-scalp EEG activity to identify features best distinguishing between learning states on Day 1 and Day 3. The classifier worked by optimizing a hyperplane in sequential 70 ms time windows to maximize separation between the two days. The performance of this distinction was measured by the <b>Az score</b> (Area Under the ROC Curve); time points with high Az scores indicate a neural correlate where significant learning-related change occurred. The classifier's continuous output, the <b>discriminant score</b>, was extracted as the neural signature. These signatures were spatially interpreted using scalp maps derived from the classifier's weight vector (importance of each electrode) via <b>Haufe's transformation</b> over the <b>-450 ms pre-response to 1000 ms post-response</b> period.
+            </p>
 
-        <div class="image-row-bottom">
-            <div class="image-container">
-                <img src="images/technique.PNG" alt="Figure 2: Whole-scalp topographical map highlighting regions involved in data acquisition." class="project-image">
-            </div>
+            <p>
+                To quantify the behavioral aspect of learning, a <b>Reinforcement Learning Drift-Diffusion Model (RLDDM)</b> was employed, which extends the standard DDM to include the impact of feedback (Q-learning) on future decisions. This model estimated the <b>learning rate</b> for each participant, a core parameter quantifying a participant's responsiveness to reward. The behavioral measure of adaptive learning was calculated as the <b>change in learning rate</b> between Day 3 and Day 1. The functional relevance of the neural correlates was then determined by using <b>Pearson's correlation</b> to test for a linear relationship between the mean <b>discriminant score</b> at the highest Az peaks and the magnitude of <b>adaptive learning</b> (change in learning rate).
+            </p>
         </div>
 
-        <p>
-            To quantify the behavioral aspect of learning, a <b>Reinforcement Learning Drift-Diffusion Model (RLDDM)</b> was employed, which extends the standard DDM to include the impact of feedback (Q-learning) on future decisions. This model estimated the <b>learning rate</b> for each participant, a core parameter quantifying a participant's responsiveness to reward. The behavioral measure of adaptive learning was calculated as the <b>change in learning rate</b> between Day 3 and Day 1. The functional relevance of the neural correlates was then determined by using <b>Pearson's correlation</b> to test for a linear relationship between the mean <b>discriminant score</b> at the highest Az peaks and the magnitude of <b>adaptive learning</b> (change in learning rate).
-        </p>
+        <div class="image-container">
+            <img src="images/technique.PNG" alt="Figure 2: Whole-scalp topographical map highlighting regions involved in data acquisition." class="project-image" width="500" height="400" style="margin-top: 20px;">
+        </div>
+    </div>
+    <h4>1. Neural Data Classification (Multivariate EEG Analysis):</h4>
+    <ul>
+        <li>Technique: A supervised single-trial analysis using <b>Linear Discriminant Analysis (LDA)</b> was employed to deduce multivariate neural signatures.</li>
+        <li>Process: Separate classifiers were trained to identify whole-scalp spatiotemporal EEG activity that best discriminated between learning on Day 1 and Day 3 for both correct and incorrect trials.</li>
+        <li>Output: The continuous classifier output, or <b>discriminant score</b>, was extracted as the neural signature for correlation.</li>
+    </ul>
 
-        <h4>1. Neural Data Classification (Multivariate EEG Analysis):</h4>
-        <ul>
-            <li>Technique: A supervised single-trial analysis using <b>Linear Discriminant Analysis (LDA)</b> was employed to deduce multivariate neural signatures.</li>
-            <li>Process: Separate classifiers were trained to identify whole-scalp spatiotemporal EEG activity that best discriminated between learning on Day 1 and Day 3 for both correct and incorrect trials.</li>
-            <li>Output: The continuous classifier output, or <b>discriminant score</b>, was extracted as the neural signature for correlation.</li>
-        </ul>
+    <h4>2. Behavioral Modeling (Computational Neuroscience):</h4>
+    <ul>
+        <li>A <b>Reinforcement Learning Drift-Diffusion Model (RLDDM)</b> was used, which models both decision-making (evidence accumulation) and learning-related parameters.</li>
+        <li>Focus Parameter: The RLDDM's <b>learning rate</b> was derived to quantify how responsive a participant was to feedback, as this parameter is highly relevant to neural processes that update belief structures based on feedback.</li>
+        <li>Measure of Adaptation: The <b>change in learning rate</b> between Day 1 and Day 3 was calculated and used as the behavioral measure of adaptive learning.</li>
+        
+    </ul>
 
-        <h4>2. Behavioral Modeling (Computational Neuroscience):</h4>
-        <ul>
-            <li>A <b>Reinforcement Learning Drift-Diffusion Model (RLDDM)</b> was used, which models both decision-making (evidence accumulation) and learning-related parameters.</li>
-            <li>Focus Parameter: The RLDDM's <b>learning rate</b> was derived to quantify how responsive a participant was to feedback, as this parameter is highly relevant to neural processes that update belief structures based on feedback.</li>
-            <li>Measure of Adaptation: The <b>change in learning rate</b> between Day 1 and Day 3 was calculated and used as the behavioral measure of adaptive learning.</li>
-            
-        </ul>
-
-        <h4>3. Functional Correlation:</h4>
-        <ul>
-            <li>The neural signature (discriminant score) was correlated with the <b>change in the learning rate</b> using <b>Pearson's correlation</b> to establish functional relevance.</li>
-        </ul>
-    </section>
+    <h4>3. Functional Correlation:</h4>
+    <ul>
+        <li>The neural signature (discriminant score) was correlated with the <b>change in the learning rate</b> using <b>Pearson's correlation</b> to establish functional relevance.</li>
+    </ul>
+</section>
 
     <section id="results">
         <h2>Findings</h2>
