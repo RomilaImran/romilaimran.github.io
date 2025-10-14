@@ -59,7 +59,7 @@ footer {
     color: #fff;
 }
 
-/* --- 4. PROJECT SPECIFIC STYLES (Your Original Code, Adjusted) --- */
+/* --- 4. PROJECT SPECIFIC STYLES --- */
 #project-intro,
 #methodology,
 #results,
@@ -90,17 +90,21 @@ h2 {
 /* Styles for side-by-side images (NEW FLEXBOX LAYOUT) */
 .image-row {
     display: flex; /* Use Flexbox to arrange children horizontally */
-    flex-wrap: wrap; /* Allows images to wrap to the next line on smaller screens */
+    flex-wrap: wrap; /* Allows images to wrap to the next line on smaller screens (Mobile Responsiveness) */
     gap: 20px; /* Space between images */
-    justify-content: center; /* Center the images horizontally */
+    justify-content: center; /* Center the entire row of images horizontally */
     margin: 30px 0;
 }
 
 .image-row .image-container {
-    flex: 1; /* Allows image containers to grow and shrink */
-    min-width: 300px; /* Minimum width before images stack */
-    max-width: 48%; /* Each image takes slightly less than half the width */
-    margin: 0; /* Override previous margin */
+    /* FIX: Tell the container to size ONLY based on its content (the image size set in HTML) */
+    flex: 0 0 auto; 
+    
+    /* We keep the max-width rule to ensure that on small screens (like phones), 
+       the two images don't try to cram next to each other and will wrap */
+    max-width: 48%; 
+    
+    margin: 0; 
     box-sizing: border-box;
 }
 
@@ -114,7 +118,10 @@ h2 {
 }
 
 .project-image {
-    max-width: 100%; /* Ensures image is responsive and fits within container */
+    /* CRITICAL: This is the ONLY thing controlling size from CSS. 
+       It ensures that on small screens (like phones), the image shrinks to fit the container.
+       It WILL NOT override the HTML width/height on a desktop. */
+    max-width: 100%; 
     height: auto;    /* Maintains aspect ratio */
     display: block;  /* Removes extra space below image */
     margin: 0 auto 10px auto; /* Centers image and adds space below */
