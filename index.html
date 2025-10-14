@@ -8,7 +8,7 @@
             While the role of positive feedback (e.g., maintain strategy) is relatively well-characterized in learning, the exact role of negative (incorrect) feedback is less clear and often considered ambiguous. Previous suggestions for negative feedback's function include performance monitoring, signaling a strategy change, or having a direct, but inverted, role similar to positive feedback. Resolving this ambiguity was a key motivator for the study.
 
             <h4>B. Limitations of Traditional ERP Methods:</h4>
-            A critical limitation in existing research is the overreliance on **univariate Event-Related Potentials (ERPs)** in determining feedback-specific neural correlates. The ERP approach often places an emphasis on individual electrode activity, leading to a lack of emphasis on whole-brain activity. This risks overlooking larger and more complex signals that arise from several overlapping ERPs and network-level brain processes, which cannot be fully captured by examining isolated electrode sites. Since learning is a dynamic and distributed task that engages numerous brain regions, a **multivariate whole-scalp approach** was needed to capture the network-level activity.
+            A critical limitation in existing research is the overreliance on univariate Event-Related Potentials (ERPs) in determining feedback-specific neural correlates. The ERP approach often places an emphasis on individual electrode activity, leading to a lack of emphasis on whole-brain activity. This risks overlooking larger and more complex signals that arise from several overlapping ERPs and network-level brain processes, which cannot be fully captured by examining isolated electrode sites. Since learning is a dynamic and distributed task that engages numerous brain regions, a multivariate whole-scalp approach was needed to capture the network-level activity.
 
             <h3>II. Project Goal</h3>
             The objective was to overcome these limitations by using a multivariate, whole-scalp approach to identify neural correlates surrounding positive and negative feedback, and to correlate these signatures with the change in the learning rate ($\Delta\alpha$) to identify any functional relevance in adaptive learning.
@@ -31,16 +31,16 @@
         <h3>III. Technical Methodology & Skills</h3>
         <h4>1. Neural Data Classification (Multivariate EEG Analysis):</h4>
         <ul>
-            <li>**Technique:** A supervised single-trial analysis using **Linear Discriminant Analysis (LDA)** was employed to deduce multivariate neural signatures.</li>
-            <li>**Process:** Separate classifiers were trained to identify whole-scalp spatiotemporal EEG activity that best discriminated between learning on Day 1 and Day 3 for both correct and incorrect trials.</li>
-            <li>**Output:** The continuous classifier output ($y$), or discriminant score, was extracted as the neural signature for correlation.</li>
+            <li>Technique: A supervised single-trial analysis using Linear Discriminant Analysis (LDA) was employed to deduce multivariate neural signatures.</li>
+            <li>Process: Separate classifiers were trained to identify whole-scalp spatiotemporal EEG activity that best discriminated between learning on Day 1 and Day 3 for both correct and incorrect trials.</li>
+            <li>Output: The continuous classifier output ($y$), or discriminant score, was extracted as the neural signature for correlation.</li>
         </ul>
 
         <h4>2. Behavioral Modeling (Computational Neuroscience):</h4>
         <ul>
-            <li>A **Reinforcement Learning Drift-Diffusion Model (RLDDM)** was used, which models both decision-making (evidence accumulation) and learning-related parameters.</li>
-            <li>**Focus Parameter:** The RLDDM's **learning rate ($\alpha$)** was derived to quantify how responsive a participant was to feedback, as this parameter is highly relevant to neural processes that update belief structures based on feedback.</li>
-            <li>**Measure of Adaptation:** The **change in learning rate ($\Delta\alpha$)** between Day 1 and Day 3 was calculated and used as the behavioral measure of adaptive learning.</li>
+            <li>A Reinforcement Learning Drift-Diffusion Model (RLDDM) was used, which models both decision-making (evidence accumulation) and learning-related parameters.</li>
+            <li>Focus Parameter: The RLDDM's learning rate ($\alpha$) was derived to quantify how responsive a participant was to feedback, as this parameter is highly relevant to neural processes that update belief structures based on feedback.</li>
+            <li>Measure of Adaptation: The change in learning rate ($\Delta\alpha$) between Day 1 and Day 3 was calculated and used as the behavioral measure of adaptive learning.</li>
         </ul>
 
         <h4>3. Functional Correlation:</h4>
@@ -64,13 +64,13 @@
         <h3>IV. Key Findings</h3>
         <h4>Positive Feedback Functional Relevance:</h4>
         <ul>
-            <li>The pre-feedback (C1 at **$-319$ ms**) and simultaneous feedback (C0 at **$0$ ms**) correlates for correct trials were **significantly and functionally relevant** to adaptive learning on both Day 1 and Day 3 ($p < 0.05$).</li>
-            <li>This suggests that as learning progresses, participants develop accurate internal predictions, and the brain appears to be updating beliefs and registering the outcome's significance **at the time of feedback** (0 ms).</li>
+            <li>The pre-feedback (C1 at $-319$ ms) and simultaneous feedback (C0 at $0$ ms) correlates for correct trials were significantly and functionally relevant to adaptive learning on both Day 1 and Day 3 ($p < 0.05$).</li>
+            <li>This suggests that as learning progresses, participants develop accurate internal predictions, and the brain appears to be updating beliefs and registering the outcome's significance at the time of feedback (0 ms).</li>
         </ul>
 
         <h4>Negative Feedback Conclusion:</h4>
         <ul>
-            <li>**No neural correlates** for negative (incorrect) feedback (I1, I0, I2) were found to be significantly correlated with the change in learning rate ($\Delta\alpha$) across any time point.</li>
+            <li>No neural correlates for negative (incorrect) feedback (I1, I0, I2) were found to be significantly correlated with the change in learning rate ($\Delta\alpha$) across any time point.</li>
         </ul>
         <p>
             These findings suggest that the brain not only registers the outcome of a learning trial but also
@@ -83,7 +83,7 @@
         <h2>Conclusion and Impact</h2>
         <h3>V. Conclusion & Impact</h3>
         <p>
-            The results provide strong evidence that whole-scalp neural correlates specific to **positive feedback** track the magnitude of adaptive learning. The lack of functional relevance for negative feedback correlates supports the hypothesis that its role is shifted towards **monitoring or signaling a strategy change** rather than directly governing the rate of learning adaptation, as is the case with positive feedback. This work validates the utility of multivariate whole-scalp analysis in providing comprehensive conclusions about the neural processes underlying reinforcement learning. Future work will focus on refining these correlates and exploring their causal roles using brain stimulation techniques.
+            The results provide strong evidence that whole-scalp neural correlates specific to positive feedback track the magnitude of adaptive learning. The lack of functional relevance for negative feedback correlates supports the hypothesis that its role is shifted towards **monitoring or signaling a strategy change** rather than directly governing the rate of learning adaptation, as is the case with positive feedback. This work validates the utility of multivariate whole-scalp analysis in providing comprehensive conclusions about the neural processes underlying reinforcement learning. Future work will focus on refining these correlates and exploring their causal roles using brain stimulation techniques.
         </p>
     </section>
 </main>
