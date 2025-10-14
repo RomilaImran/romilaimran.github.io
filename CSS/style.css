@@ -53,3 +53,18 @@ b {
   transform: scale(1.03);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
+
+.two-column {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* allows it to stack nicely on smaller screens */
+}
+
+.two-column > div {
+  flex: 1;
+  min-width: 350px;
+}
+
+
