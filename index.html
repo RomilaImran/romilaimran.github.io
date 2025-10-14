@@ -26,44 +26,56 @@
     <section id="methodology">
         <style>
             /* CSS to create the side-by-side layout for the methodology text and the single image */
-            .methodology-layout {
+            .methodology-layout-top {
                 display: flex; /* Enable flex container */
                 align-items: flex-start; /* Align items to the top */
                 gap: 20px; /* Space between the text block and the image */
             }
 
-            .methodology-text {
+            .methodology-text-top {
                 flex: 1; /* Allow text block to take up available space */
             }
 
             /* Optional: Style for the single image container */
             .method-image-container img {
+                /* Reduced image size slightly to better fit next to paragraph if space is constrained */
+                max-width: 400px;
+                height: auto;
+                width: 100%; /* Make it responsive within its flex container */
+            }
+
+            /* Standard image container for the second image (technique.PNG) */
+            .image-row-bottom {
+                display: flex; 
+                justify-content: center;
+                margin-top: 20px; /* Add space below the preceding text */
+            }
+            .image-row-bottom .image-container img {
                 width: 500px;
                 height: 400px;
-                /* Ensure no extra margins are needed for alignment */
             }
         </style>
 
         <h2>Technique</h2>
 
-        <div class="methodology-layout">
-            <div class="methodology-text">
+        <div class="methodology-layout-top">
+            <div class="methodology-text-top">
                 <p>
                     This project integrated <b>machine learning</b> and <b>advanced computational modeling</b> to link brain activity (EEG) with behavioral adaptation, moving beyond traditional univariate methods.
-                </p>
-                
-                <p>
-                    Multivariate neural signatures were deduced using <b>Linear Discriminant Analysis (LDA)</b> classifiers, trained separately on correct and incorrect whole-scalp EEG activity to identify features best distinguishing between learning states on Day 1 and Day 3. The classifier worked by optimizing a hyperplane in sequential 70 ms time windows to maximize separation between the two days. The performance of this distinction was measured by the <b>Az score</b> (Area Under the ROC Curve); time points with high Az scores indicate a neural correlate where significant learning-related change occurred. The classifier's continuous output, the <b>discriminant score</b>, was extracted as the neural signature. These signatures were spatially interpreted using scalp maps derived from the classifier's weight vector (importance of each electrode) via <b>Haufe's transformation</b> over the <b>-450 ms pre-response to 1000 ms post-response</b> period.
                 </p>
             </div>
 
             <div class="method-image-container">
-                <img src="images/method.PNG" alt="Figure 1: Illustration of the experimental setup, showing a participant undergoing EEG recording during the reinforcement learning task." class="project-image" width="500" height="400">
+                <img src="images/method.PNG" alt="Figure 1: Illustration of the experimental setup, showing a participant undergoing EEG recording during the reinforcement learning task." class="project-image">
             </div>
         </div>
-        <div class="image-row" style="display: flex; justify-content: center;">
+        <p>
+            Multivariate neural signatures were deduced using <b>Linear Discriminant Analysis (LDA)</b> classifiers, trained separately on correct and incorrect whole-scalp EEG activity to identify features best distinguishing between learning states on Day 1 and Day 3. The classifier worked by optimizing a hyperplane in sequential 70 ms time windows to maximize separation between the two days. The performance of this distinction was measured by the <b>Az score</b> (Area Under the ROC Curve); time points with high Az scores indicate a neural correlate where significant learning-related change occurred. The classifier's continuous output, the <b>discriminant score</b>, was extracted as the neural signature. These signatures were spatially interpreted using scalp maps derived from the classifier's weight vector (importance of each electrode) via <b>Haufe's transformation</b> over the <b>-450 ms pre-response to 1000 ms post-response</b> period.
+        </p>
+
+        <div class="image-row-bottom">
             <div class="image-container">
-                <img src="images/technique.PNG" alt="Figure 2: Whole-scalp topographical map highlighting regions involved in data acquisition." class="project-image" width="500" height="400">
+                <img src="images/technique.PNG" alt="Figure 2: Whole-scalp topographical map highlighting regions involved in data acquisition." class="project-image">
             </div>
         </div>
 
