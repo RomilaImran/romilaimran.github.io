@@ -25,27 +25,22 @@
 
     <section id="methodology">
         <style>
-            /* Added CSS to create the side-by-side layout for the methodology text and the images */
+            /* CSS to create the side-by-side layout for the methodology text and the single image */
             .methodology-layout {
                 display: flex; /* Enable flex container */
                 align-items: flex-start; /* Align items to the top */
-                gap: 20px; /* Space between the text block and the images */
+                gap: 20px; /* Space between the text block and the image */
             }
 
             .methodology-text {
                 flex: 1; /* Allow text block to take up available space */
             }
 
-            .image-row-method {
-                display: flex;
-                flex-direction: column; /* Stack the images vertically */
-                align-items: center;
-            }
-            /* Adjust individual image container margins/widths if needed, but keeping the original structure */
-            .image-container-method img {
+            /* Optional: Style for the single image container */
+            .method-image-container img {
                 width: 500px;
                 height: 400px;
-                margin-bottom: 10px; /* Add space between stacked images */
+                /* Ensure no extra margins are needed for alignment */
             }
         </style>
 
@@ -56,21 +51,22 @@
                 <p>
                     This project integrated <b>machine learning</b> and <b>advanced computational modeling</b> to link brain activity (EEG) with behavioral adaptation, moving beyond traditional univariate methods.
                 </p>
-
+                
                 <p>
                     Multivariate neural signatures were deduced using <b>Linear Discriminant Analysis (LDA)</b> classifiers, trained separately on correct and incorrect whole-scalp EEG activity to identify features best distinguishing between learning states on Day 1 and Day 3. The classifier worked by optimizing a hyperplane in sequential 70 ms time windows to maximize separation between the two days. The performance of this distinction was measured by the <b>Az score</b> (Area Under the ROC Curve); time points with high Az scores indicate a neural correlate where significant learning-related change occurred. The classifier's continuous output, the <b>discriminant score</b>, was extracted as the neural signature. These signatures were spatially interpreted using scalp maps derived from the classifier's weight vector (importance of each electrode) via <b>Haufe's transformation</b> over the <b>-450 ms pre-response to 1000 ms post-response</b> period.
                 </p>
             </div>
 
-            <div class="image-row-method">
-                <div class="image-container-method">
-                    <img src="images/method.PNG" alt="Figure 1: Illustration of the experimental setup, showing a participant undergoing EEG recording during the reinforcement learning task." class="project-image" width="500" height="400">
-                </div>
-                <div class="image-container-method">
-                    <img src="images/technique.PNG" alt="Figure 2: Whole-scalp topographical map highlighting regions involved in data acquisition." class="project-image" width="500" height="400">
-                </div>
+            <div class="method-image-container">
+                <img src="images/method.PNG" alt="Figure 1: Illustration of the experimental setup, showing a participant undergoing EEG recording during the reinforcement learning task." class="project-image" width="500" height="400">
             </div>
         </div>
+        <div class="image-row" style="display: flex; justify-content: center;">
+            <div class="image-container">
+                <img src="images/technique.PNG" alt="Figure 2: Whole-scalp topographical map highlighting regions involved in data acquisition." class="project-image" width="500" height="400">
+            </div>
+        </div>
+
         <p>
             To quantify the behavioral aspect of learning, a <b>Reinforcement Learning Drift-Diffusion Model (RLDDM)</b> was employed, which extends the standard DDM to include the impact of feedback (Q-learning) on future decisions. This model estimated the <b>learning rate</b> for each participant, a core parameter quantifying a participant's responsiveness to reward. The behavioral measure of adaptive learning was calculated as the <b>change in learning rate</b> between Day 3 and Day 1. The functional relevance of the neural correlates was then determined by using <b>Pearson's correlation</b> to test for a linear relationship between the mean <b>discriminant score</b> at the highest Az peaks and the magnitude of <b>adaptive learning</b> (change in learning rate).
         </p>
