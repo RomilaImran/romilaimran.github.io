@@ -89,20 +89,19 @@ h2 {
 
 /* Styles for side-by-side images (NEW FLEXBOX LAYOUT) */
 .image-row {
-    display: flex; /* Use Flexbox to arrange children horizontally */
-    flex-wrap: wrap; /* Allows images to wrap to the next line on smaller screens (Mobile Responsiveness) */
-    gap: 20px; /* Space between images */
-    justify-content: center; /* Center the entire row of images horizontally */
+    display: flex;          /* Enables horizontal layout */
+    flex-wrap: wrap;        /* Allows images to stack on small screens */
+    gap: 20px;              /* Space between images */
+    justify-content: center; /* Centers the images horizontally */
     margin: 30px 0;
 }
 
 .image-row .image-container {
-    /* FIX: Tell the container to size ONLY based on its content (the image size set in HTML) */
+    /* FIX: Tells the container to size only based on the image size set in HTML (500px) */
     flex: 0 0 auto; 
     
-    /* We keep the max-width rule to ensure that on small screens (like phones), 
-       the two images don't try to cram next to each other and will wrap */
-    max-width: 48%; 
+    /* This max-width forces the images to stack when the screen is too narrow (e.g., on a phone) */
+    max-width: 50%; 
     
     margin: 0; 
     box-sizing: border-box;
@@ -118,19 +117,13 @@ h2 {
 }
 
 .project-image {
-    /* CRITICAL: This is the ONLY thing controlling size from CSS. 
-       It ensures that on small screens (like phones), the image shrinks to fit the container.
-       It WILL NOT override the HTML width/height on a desktop. */
+    /* Critical for responsiveness: Ensures image shrinks to fit container on small screens */
     max-width: 100%; 
     height: auto;    /* Maintains aspect ratio */
-    display: block;  /* Removes extra space below image */
-    margin: 0 auto 10px auto; /* Centers image and adds space below */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: block;  
+    margin: 0 auto; /* Centers image inside its container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
 
-.image-caption {
-    font-size: 0.9em;
-    color: #555;
-    font-style: italic;
-}
+/* REMOVED: .image-caption styles are no longer needed */
