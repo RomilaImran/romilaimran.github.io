@@ -97,10 +97,10 @@ h2 {
 }
 
 .image-row .image-container {
-    /* FIX: Tells the container to size only based on the image size set in HTML (500px) */
+    /* FIX: Prevents container from stretching and forces it to size based on the 500x500 image */
     flex: 0 0 auto; 
     
-    /* This max-width forces the images to stack when the screen is too narrow (e.g., on a phone) */
+    /* Ensures the containers stack when the screen is smaller than 1040px (500*2 + gaps + margins) */
     max-width: 50%; 
     
     margin: 0; 
@@ -117,13 +117,11 @@ h2 {
 }
 
 .project-image {
-    /* Critical for responsiveness: Ensures image shrinks to fit container on small screens */
+    /* CRITICAL FOR RESPONSIVENESS: Shrinks image on small screens */
     max-width: 100%; 
-    height: auto;    /* Maintains aspect ratio */
+    height: auto;    
     display: block;  
-    margin: 0 auto; /* Centers image inside its container */
+    margin: 0 auto; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
-
-/* REMOVED: .image-caption styles are no longer needed */
