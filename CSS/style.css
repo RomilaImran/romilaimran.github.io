@@ -1,0 +1,129 @@
+/* --- 1. GLOBAL RESET AND TYPOGRAPHY --- */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* --- 2. HEADER AND NAVIGATION --- */
+header {
+    background: #0056b3;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #003d80;
+    border-radius: 4px;
+}
+
+/* --- 3. FOOTER --- */
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    background: #333;
+    color: #fff;
+}
+
+/* --- 4. PROJECT SPECIFIC STYLES (Your Original Code, Adjusted) --- */
+#project-intro,
+#methodology,
+#results,
+#conclusion {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+#project-intro h1 {
+    text-align: center;
+    color: #0056b3;
+}
+
+.intro-paragraph {
+    font-size: 1.1em;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+/* Styles for side-by-side images (NEW FLEXBOX LAYOUT) */
+.image-row {
+    display: flex; /* Use Flexbox to arrange children horizontally */
+    flex-wrap: wrap; /* Allows images to wrap to the next line on smaller screens */
+    gap: 20px; /* Space between images */
+    justify-content: center; /* Center the images horizontally */
+    margin: 30px 0;
+}
+
+.image-row .image-container {
+    flex: 1; /* Allows image containers to grow and shrink */
+    min-width: 300px; /* Minimum width before images stack */
+    max-width: 48%; /* Each image takes slightly less than half the width */
+    margin: 0; /* Override previous margin */
+    box-sizing: border-box;
+}
+
+/* Image Container Styling */
+.image-container {
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.project-image {
+    max-width: 100%; /* Ensures image is responsive and fits within container */
+    height: auto;    /* Maintains aspect ratio */
+    display: block;  /* Removes extra space below image */
+    margin: 0 auto 10px auto; /* Centers image and adds space below */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 5px;
+}
+
+.image-caption {
+    font-size: 0.9em;
+    color: #555;
+    font-style: italic;
+}
