@@ -2,7 +2,7 @@
     <section id="project-intro">
         <style>
             /* --- PROJECT 1 STYLES --- */
-            
+
             /* Reduce the default bottom margin of the main title */
             #project-intro h1 {
                 margin-bottom: 10px;
@@ -48,8 +48,8 @@
 
             /* Style for result images in a row */
             #results .image-row {
-                display: flex; 
-                justify-content: center; 
+                display: flex;
+                justify-content: center;
                 gap: 20px; /* Added gap for better separation of result images */
                 flex-wrap: wrap; /* Allow images to wrap on smaller screens */
             }
@@ -100,31 +100,33 @@
                 <p>
                     To quantify the behavioral aspect of learning, a <b>Reinforcement Learning Drift-Diffusion Model (RLDDM)</b> was employed, which extends the standard DDM to include the impact of feedback (Q-learning) on future decisions. This model estimated the <b>learning rate</b> for each participant, a core parameter quantifying a participant's responsiveness to reward. The behavioral measure of adaptive learning was calculated as the <b>change in learning rate</b> between Day 3 and Day 1. The functional relevance of the neural correlates was then determined by using <b>Pearson's correlation</b> to test for a linear relationship between the mean <b>discriminant score</b> at the highest Az peaks and the magnitude of <b>adaptive learning</b> (change in learning rate).
                 </p>
+
+                <h4>1. Multivariate EEG Analysis:</h4>
+                <ul>
+                    <li>Technique: A supervised single-trial analysis using <b>Linear Discriminant Analysis (LDA)</b> was employed to deduce multivariate neural signatures.</li>
+                    <li>Process: Separate classifiers were trained to identify whole-scalp spatiotemporal EEG activity that best discriminated between learning on Day 1 and Day 3 for both correct and incorrect trials.</li>
+                    <li>Output: The continuous classifier output, or <b>discriminant score</b>, was extracted as the neural signature for correlation.</li>
+                </ul>
+
+                <h4>2. Behavioral Modeling:</h4>
+                <ul>
+                    <li>A <b>Reinforcement Learning Drift-Diffusion Model (RLDDM)</b> was used, which models both decision-making (evidence accumulation) and learning-related parameters.</li>
+                    <li>Focus Parameter: The RLDDM's <b>learning rate</b> was derived to quantify how responsive a participant was to feedback, as this parameter is highly relevant to neural processes that update belief structures based on feedback.</li>
+                    <li>Measure of Adaptation: The <b>change in learning rate</b> between Day 1 and Day 3 was calculated and used as the behavioral measure of adaptive learning.</li>
+
+                </ul>
+
+                <h4>3. Functional Correlation:</h4>
+                <ul>
+                    <li>The neural signature (discriminant score) was correlated with the <b>change in the learning rate</b> using <b>Pearson's correlation</b> to establish functional relevance.</li>
+                </ul>
             </div>
 
             <div class="image-container">
                 <img src="images/technique1.PNG" alt="Figure 2: Whole-scalp topographical map highlighting regions involved in data acquisition." class="project-image" width="500" height="400">
             </div>
         </div>
-        <h4>1. Multivariate EEG Analysis:</h4>
-        <ul>
-            <li>Technique: A supervised single-trial analysis using <b>Linear Discriminant Analysis (LDA)</b> was employed to deduce multivariate neural signatures.</li>
-            <li>Process: Separate classifiers were trained to identify whole-scalp spatiotemporal EEG activity that best discriminated between learning on Day 1 and Day 3 for both correct and incorrect trials.</li>
-            <li>Output: The continuous classifier output, or <b>discriminant score</b>, was extracted as the neural signature for correlation.</li>
-        </ul>
 
-        <h4>2. Behavioral Modeling:</h4>
-        <ul>
-            <li>A <b>Reinforcement Learning Drift-Diffusion Model (RLDDM)</b> was used, which models both decision-making (evidence accumulation) and learning-related parameters.</li>
-            <li>Focus Parameter: The RLDDM's <b>learning rate</b> was derived to quantify how responsive a participant was to feedback, as this parameter is highly relevant to neural processes that update belief structures based on feedback.</li>
-            <li>Measure of Adaptation: The <b>change in learning rate</b> between Day 1 and Day 3 was calculated and used as the behavioral measure of adaptive learning.</li>
-
-        </ul>
-
-        <h4>3. Functional Correlation:</h4>
-        <ul>
-            <li>The neural signature (discriminant score) was correlated with the <b>change in the learning rate</b> using <b>Pearson's correlation</b> to establish functional relevance.</li>
-        </ul>
     </section>
 
     <section id="results">
@@ -148,13 +150,13 @@
             </div>
         </div>
     </section>
-    
+
     <section id="project-two">
         <style>
             /* --- PROJECT 2 STYLES --- */
-            /* Add any specific styles for Project 2 here, making sure to use 
-               unique IDs or classes (like #project-two or .project-two-layout) */
-            
+            /* Add any specific styles for Project 2 here, making sure to use
+                unique IDs or classes (like #project-two or .project-two-layout) */
+
             #project-two h1 {
                 margin-top: 50px; /* Add space above the new project title */
                 margin-bottom: 10px;
@@ -217,7 +219,7 @@
         <p>
             [DESCRIPTION OF THE KEY METHODOLOGY (e.g., Machine Learning Model, Data Analysis Technique, etc.)]
         </p>
-        
+
         <h4>Key Steps:</h4>
         <ul>
             <li>Step 1: [Detail the first crucial step.]</li>
@@ -235,6 +237,6 @@
             <div class="image-container">
                 <img src="images/[project2_result1_image].PNG" alt="Figure 2: Key result visualization for Project 2." class="project-image" width="550" height="500">
             </div>
-            </div>
+        </div>
     </section>
-    </main>
+</main>
