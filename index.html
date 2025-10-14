@@ -21,11 +21,8 @@
         <p>
             The trial data utilized for this study was collected from <b>22 right-handed participants</b> (ages 18-29), who performed a two-alternative forced-choice (2AFC) task over three consecutive days at the University of Leeds. The task required participants to differentiate between visual, auditory, and audiovisual stimuli (V, A, and AV) of either a car or a face. Each participant completed 216 trials daily, totaling 648 trials across the experiment. Stimulus clarity was systematically varied using low (32.5%) and high (37.6%) phase coherence, with immediate, valence-specific feedback (smiling or frowning cartoon scientist) provided upon response. Neural activity was recorded from <b>64 electrodes</b> placed according to the International 10-20 system at a 1000 Hz sampling rate, yielding a substantial total of <b>912,384 individual electrode recordings</b> across all participants and trials. To isolate the neural correlates of decision-making and feedback processing, the EEG data was <b>response-locked</b>, setting 0 ms to the simultaneous occurrence of the participant's keypress and the onset of feedback. The analysis subsequently focused on the <b>450 ms pre-response to 1000 ms post-response</b> window, utilizing only Day 1 and Day 3 data to maximize the contrast in learning progression.
         </p>
-
-        <div class="method-image-container">
-            <img src="images/method.PNG" alt="Figure 1: Illustration of the experimental setup, showing a participant undergoing EEG recording during the reinforcement learning task." class="project-image">
-        </div>
-    </section>
+        
+        </section>
 
     <section id="methodology">
         <style>
@@ -37,15 +34,16 @@
             }
 
             .methodology-text-top {
-                flex: 1; /* Allow text block to take up available space */
+                /* Set a max width or flex-basis so the text doesn't hog all the space */
+                flex: 1; 
+                min-width: 400px; /* Ensure text block has enough room */
             }
 
-            /* Optional: Style for the single image container */
+            /* Style for the single image container */
             .method-image-container img {
-                /* Reduced image size slightly to better fit next to paragraph if space is constrained */
-                max-width: 400px;
-                height: auto;
-                width: 100%; /* Make it responsive within its flex container */
+                max-width: 500px;
+                height: 400px;
+                width: auto; 
             }
 
             /* Standard image container for the second image (technique.PNG) */
@@ -67,13 +65,16 @@
                 <p>
                     This project integrated <b>machine learning</b> and <b>advanced computational modeling</b> to link brain activity (EEG) with behavioral adaptation, moving beyond traditional univariate methods.
                 </p>
+                <p>
+                    Multivariate neural signatures were deduced using <b>Linear Discriminant Analysis (LDA)</b> classifiers, trained separately on correct and incorrect whole-scalp EEG activity to identify features best distinguishing between learning states on Day 1 and Day 3. The classifier worked by optimizing a hyperplane in sequential 70 ms time windows to maximize separation between the two days. The performance of this distinction was measured by the <b>Az score</b> (Area Under the ROC Curve); time points with high Az scores indicate a neural correlate where significant learning-related change occurred. The classifier's continuous output, the <b>discriminant score</b>, was extracted as the neural signature. These signatures were spatially interpreted using scalp maps derived from the classifier's weight vector (importance of each electrode) via <b>Haufe's transformation</b> over the <b>-450 ms pre-response to 1000 ms post-response</b> period.
+                </p>
             </div>
 
+            <div class="method-image-container">
+                <img src="images/method.PNG" alt="Figure 1: Illustration of the experimental setup, showing a participant undergoing EEG recording during the reinforcement learning task." class="project-image">
+            </div>
         </div>
-        <p>
-            Multivariate neural signatures were deduced using <b>Linear Discriminant Analysis (LDA)</b> classifiers, trained separately on correct and incorrect whole-scalp EEG activity to identify features best distinguishing between learning states on Day 1 and Day 3. The classifier worked by optimizing a hyperplane in sequential 70 ms time windows to maximize separation between the two days. The performance of this distinction was measured by the <b>Az score</b> (Area Under the ROC Curve); time points with high Az scores indicate a neural correlate where significant learning-related change occurred. The classifier's continuous output, the <b>discriminant score</b>, was extracted as the neural signature. These signatures were spatially interpreted using scalp maps derived from the classifier's weight vector (importance of each electrode) via <b>Haufe's transformation</b> over the <b>-450 ms pre-response to 1000 ms post-response</b> period.
-        </p>
-
+        
         <div class="image-row-bottom">
             <div class="image-container">
                 <img src="images/technique.PNG" alt="Figure 2: Whole-scalp topographical map highlighting regions involved in data acquisition." class="project-image">
