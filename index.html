@@ -1,9 +1,11 @@
 <main>
     <section id="project-intro">
         <style>
+            /* --- PROJECT 1 STYLES --- */
+            
             /* Reduce the default bottom margin of the main title */
             #project-intro h1 {
-                margin-bottom: 10px; 
+                margin-bottom: 10px;
             }
 
             /* Reduce the default top margin of the paragraph */
@@ -20,7 +22,7 @@
 
             .intro-text-block {
                 /* Allow text block to take up available space */
-                flex: 1; 
+                flex: 1;
                 min-width: 400px;
             }
 
@@ -28,25 +30,46 @@
             .method-image-container img {
                 max-width: 500px;
                 height: 400px;
-                width: auto; 
+                width: auto;
+            }
+
+            /* Standard image container for the technique image */
+            #methodology .image-row-bottom,
+            .image-row-bottom {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px; /* Add space below the preceding text */
+            }
+
+            #methodology .image-container img {
+                width: 500px;
+                height: 400px;
+            }
+
+            /* Style for result images in a row */
+            #results .image-row {
+                display: flex; 
+                justify-content: center; 
+                gap: 20px; /* Added gap for better separation of result images */
+                flex-wrap: wrap; /* Allow images to wrap on smaller screens */
             }
         </style>
 
         <h1>Investigating Whole-scalp Accuracy-specific Neural Correlates Underlying Reinforcement Learning</h1>
         <p style="font-size: 0.9em; margin-top: -5px; margin-bottom: 15px;">
-           Note: All images taken from my work. Code found on 
-           <a href="https://github.com/RomilaImran/Capstone" target="_blank">GitHub</a>. 
-           Thesis with parts redacted: 
-           <a href="https://docs.google.com/document/d/1PRiuKHGVvQWm5iNwaom7YDRGVxY4_K7JM85Ou9aEfds/edit?usp=sharing" target="_blank">
-               Google Docs
-           </a>. 
-           PPT: 
-           <a href="https://docs.google.com/presentation/d/1Ep65J73TX6BLkdnRNjzRQ1ARUH9V-s5gOQ48-9Zme64/edit?usp=sharing" target="_blank">
-               Google Slides
-           </a>.
+            Note: All images taken from my work. Code found on
+            <a href="https://github.com/RomilaImran/Capstone" target="_blank">GitHub</a>.
+            Thesis with parts redacted:
+            <a href="https://docs.google.com/document/d/1PRiuKHGVvQWm5iNwaom7YDRGVxY4_K7JM85Ou9aEfds/edit?usp=sharing" target="_blank">
+                Google Docs
+            </a>.
+            PPT:
+            <a href="https://docs.google.com/presentation/d/1Ep65J73TX6BLkdnRNjzRQ1ARUH9V-s5gOQ48-9Zme64/edit?usp=sharing" target="_blank">
+                Google Slides
+            </a>.
         </p>
 
-        
+
         <div class="intro-layout-top">
             <div class="intro-text-block">
                 <p class="intro-paragraph">
@@ -66,16 +89,9 @@
 
     <section id="methodology">
         <style>
-            /* Standard image container for the second image (technique.PNG) */
-            .image-row-bottom {
-                display: flex; 
-                justify-content: center;
-                margin-top: 20px; /* Add space below the preceding text */
-            }
-            .image-row-bottom .image-container img {
-                width: 500px;
-                height: 400px;
-            }
+            /* Ensure the image container for the technique section is correctly styled, 
+               inheriting from the general styles in #project-intro style block if possible, 
+               or using specific styles here if needed. */
         </style>
 
         <h2>Technique</h2>
@@ -85,7 +101,7 @@
                 <p>
                     This project integrated <b>machine learning</b> and <b>advanced computational modeling</b> to link brain activity (EEG) with behavioral adaptation, moving beyond traditional univariate methods.
                 </p>
-                
+
                 <p>
                     Multivariate neural signatures were deduced using <b>Linear Discriminant Analysis (LDA)</b> classifiers, trained separately on correct and incorrect whole-scalp EEG activity to identify features best distinguishing between learning states on Day 1 and Day 3. The classifier worked by optimizing a hyperplane in sequential 70 ms time windows to maximize separation between the two days. The performance of this distinction was measured by the <b>Az score</b> (Area Under the ROC Curve); time points with high Az scores indicate a neural correlate where significant learning-related change occurred. The classifier's continuous output, the <b>discriminant score</b>, was extracted as the neural signature. These signatures were spatially interpreted using scalp maps derived from the classifier's weight vector (importance of each electrode) via <b>Haufe's transformation</b> over the <b>-450 ms pre-response to 1000 ms post-response</b> period.
                 </p>
@@ -111,7 +127,7 @@
             <li>A <b>Reinforcement Learning Drift-Diffusion Model (RLDDM)</b> was used, which models both decision-making (evidence accumulation) and learning-related parameters.</li>
             <li>Focus Parameter: The RLDDM's <b>learning rate</b> was derived to quantify how responsive a participant was to feedback, as this parameter is highly relevant to neural processes that update belief structures based on feedback.</li>
             <li>Measure of Adaptation: The <b>change in learning rate</b> between Day 1 and Day 3 was calculated and used as the behavioral measure of adaptive learning.</li>
-            
+
         </ul>
 
         <h4>3. Functional Correlation:</h4>
@@ -124,20 +140,110 @@
         <h2>Findings</h2>
         <p>
             Based on the <b>Multivariate Linear Discriminant Analysis (LDA)</b> of whole-scalp activity, four primary neural correlates (<b>Az scores</b>) were identified: <b>C1</b> (<b>-319</b> ms, pre-response correct), <b>I1</b> (<b>-409</b> ms, pre-response incorrect), <b>C2</b> (<b>391</b> ms, post-response correct), and <b>I2</b> (<b>581</b> ms, post-response incorrect), alongside signals at the feedback onset (<b>C0/I0</b> at 0 ms).
-            
+
             Spatially, correct trials exhibited consistent and compact signals, transitioning from <b>occipital activity</b> at feedback onset (0 ms) to <b>frontoparietal regions</b> post-response (~ 150 to 950 ms). Conversely, incorrect trials yielded more diffused signals with notable <b>right-lateralized frontal activity</b> post-response, indicative of heightened frontal control and affective processing.
-            
+
             When assessing functional relevance by correlating these signatures with the <b>change in the learning rate</b>, <b>positive feedback correlates (C1 and C0) proved highly relevant</b>, showing a significant correlation with the <b>change in learning rate (correct trials)</b> across both Day 1 and Day 3. This enduring correlation suggests that these signals, particularly the C1 and C0 activity which involves occipital regions and may reflect anticipatory prediction or confidence, actively <b>track adaptive learning progression</b>.
-            
+
             The post-response correlate, C2, was only relevant on Day 1, suggesting it captures the initial, greater need for cognitive updating (a P3b-like response) that diminishes as learning becomes automated. Crucially, none of the <b>incorrect feedback correlates (I1, I0, I2) showed a significant linear correlation</b> with the <b>change in learning rate (incorrect trials)</b>, implying they do not linearly track the magnitude of learning adaptation, despite their distinct spatial patterns (e.g., right frontal/parietal activity) suggesting systemic involvement in attention and conflict monitoring.
         </p>
-        
-        <div class="image-row" style="display: flex; justify-content: center;">
+
+        <div class="image-row">
             <div class="image-container">
                 <img src="images/result1.PNG" alt="Figure 3: Whole-scalp topographical map showing regions of heightened neural activity during accurate feedback processing." class="project-image" width="550" height="500">
+            </div>
+            <div class="image-container">
                 <img src="images/plot1.PNG" alt="Figure 4: Bar graph illustrating differences in specific ERP components for accurate vs. inaccurate outcomes." class="project-image" width="500" height="480">
             </div>
         </div>
     </section>
+    
+    <section id="project-two">
+        <style>
+            /* --- PROJECT 2 STYLES --- */
+            /* Add any specific styles for Project 2 here, making sure to use 
+               unique IDs or classes (like #project-two or .project-two-layout) */
+            
+            #project-two h1 {
+                margin-top: 50px; /* Add space above the new project title */
+                margin-bottom: 10px;
+            }
 
-</main>
+            .project-two-intro-layout {
+                display: flex;
+                align-items: flex-start;
+                gap: 25px;
+            }
+
+            .project-two-intro-layout .intro-text-block {
+                flex: 1;
+                min-width: 400px;
+            }
+
+            .project-two-intro-layout .image-container img {
+                max-width: 500px;
+                height: 400px;
+                width: auto;
+            }
+
+            .project-two-results-row {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            /* Inherit some styles or define new ones for Project 2 images if needed */
+        </style>
+
+        <h1>[TITLE OF SECOND PROJECT GOES HERE]</h1>
+        <p style="font-size: 0.9em; margin-top: -5px; margin-bottom: 15px;">
+            Note: All images taken from my work. Code found on
+            <a href="[LINK TO PROJECT 2 GITHUB]" target="_blank">GitHub</a>.
+            Paper/Summary:
+            <a href="[LINK TO PROJECT 2 DOCS/PAPER]" target="_blank">
+                Google Docs/PDF
+            </a>.
+        </p>
+
+        <div class="project-two-intro-layout">
+            <div class="intro-text-block">
+                <p class="intro-paragraph">
+                    [INTRODUCTION PARAGRAPH 1: State the problem and the objective of Project 2.]
+                </p>
+
+                <p>
+                    [INTRODUCTION PARAGRAPH 2: Briefly describe the data, participants, or materials used for Project 2.]
+                </p>
+            </div>
+
+            <div class="image-container">
+                <img src="images/[project2_intro_image].PNG" alt="Figure 1: Illustration of the main setup or concept of Project 2." class="project-image" width="100" height="100">
+            </div>
+        </div>
+
+        <h2>Technique</h2>
+        <p>
+            [DESCRIPTION OF THE KEY METHODOLOGY (e.g., Machine Learning Model, Data Analysis Technique, etc.)]
+        </p>
+        
+        <h4>Key Steps:</h4>
+        <ul>
+            <li>Step 1: [Detail the first crucial step.]</li>
+            <li>Step 2: [Detail the second crucial step.]</li>
+            <li>Step 3: [Detail the third crucial step.]</li>
+        </ul>
+
+
+        <h2>Findings</h2>
+        <p>
+            [SUMMARY OF FINDINGS: Describe the main results and their interpretation.]
+        </p>
+
+        <div class="project-two-results-row">
+            <div class="image-container">
+                <img src="images/[project2_result1_image].PNG" alt="Figure 2: Key result visualization for Project 2." class="project-image" width="550" height="500">
+            </div>
+            </div>
+    </section>
+    </main>
