@@ -1,16 +1,21 @@
 <main>
     <section id="project-intro">
+        <style>
+            /* Reduce the default bottom margin of the main title */
+            #project-intro h1 {
+                margin-bottom: 10px; 
+            }
+
+            /* Reduce the default top margin of the paragraph */
+            .intro-paragraph {
+                margin-top: 10px;
+            }
+        </style>
+
         <h1>Investigating Whole-scalp Accuracy-specific Neural Correlates Underlying Reinforcement Learning</h1>
+        
         <p class="intro-paragraph">
-            <h3>I. Project Background</h3>
-            <h4>A. Ambiguity of Negative Feedback:</h4>
-            While the role of positive feedback (e.g., maintain strategy) is relatively well-characterized in learning, the exact role of negative (incorrect) feedback is less clear and often considered ambiguous. Previous suggestions for negative feedback's function include performance monitoring, signaling a strategy change, or having a direct, but inverted, role similar to positive feedback. Resolving this ambiguity was a key motivator for the study.
-
-            <h4>B. Limitations of Traditional ERP Methods:</h4>
-            A critical limitation in existing research is the overreliance on univariate Event-Related Potentials (ERPs) in determining feedback-specific neural correlates. The ERP approach often places an emphasis on individual electrode activity, leading to a lack of emphasis on whole-brain activity. This risks overlooking larger and more complex signals that arise from several overlapping ERPs and network-level brain processes, which cannot be fully captured by examining isolated electrode sites. Since learning is a dynamic and distributed task that engages numerous brain regions, a multivariate whole-scalp approach was needed to capture the network-level activity.
-
-            <h3>II. Project Goal</h3>
-            The objective was to overcome these limitations by using a multivariate, whole-scalp approach to identify neural correlates surrounding positive and negative feedback, and to correlate these signatures with the change in the learning rate ($\Delta\alpha$) to identify any functional relevance in adaptive learning.
+            While the role of positive feedback in reinforcement learning (e.g., maintain strategy) is well-characterized, the exact function of negative (incorrect) feedback remains ambiguous, variously suggested to serve as performance monitoring, a signal for strategy change, or simply an inverted form of positive feedback. Resolving this ambiguity was a key goal. Second, existing research is limited by its heavy reliance on univariate Event-Related Potentials (ERPs), which overemphasize individual electrode activity and neglect complex, network-level brain processes that arise from several overlapping ERPs. Since learning is a dynamic and distributed task, this approach risks overlooking crucial signals. Therefore, the primary objective of this project was to overcome these methodological limitations by employing a multivariate, whole-scalp approach to identify distinct neural correlates for positive and negative feedback, and subsequently to correlate these specific neural signatures with the change in the learning rate ($\Delta\alpha$) to determine their functional relevance in adaptive learning.
         </p>
     </section>
 
