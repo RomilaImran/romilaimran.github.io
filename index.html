@@ -1,36 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Romil's Portfolio Site</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<main>
+    <section id="project-intro">
+        <h1>Investigating Whole-scalp Accuracy-specific Neural Correlates Underlying Reinforcement Learning</h1>
+        <p class="intro-paragraph">
+            This project delves into the intricate neural mechanisms that underpin reinforcement learning processes,
+            specifically examining how accuracy-related signals manifest across the entire scalp. Using advanced
+            neuroimaging techniques, we aim to identify and characterize the specific brain activities that correlate
+            with successful and unsuccessful learning outcomes.
+        </p>
+    </section>
 
-    <main>
-        <section id="home">
-            <h1>Welcome, I'm Romila.</h1>
-            <p>This is the start of my professional portfolio.</p>
-        </section>
+    <section id="methodology">
+        <h2>Methodology</h2>
+        <p>
+            Our approach combines sophisticated behavioral tasks with whole-scalp neuroimaging data acquisition.
+            Participants engaged in a custom-designed reinforcement learning paradigm where their decisions
+            yielded distinct accuracy feedback. Electroencephalography (EEG) data was recorded simultaneously
+            to capture high temporal resolution neural activity.
+        </p>
+        <div class="image-container">
+            <img src="images/experimental_setup.png" alt="Diagram of the experimental setup for EEG recording" class="project-image">
+            <p class="image-caption">Figure 1: Illustration of the experimental setup, showing a participant undergoing EEG recording during the reinforcement learning task.</p>
+        </div>
+        <p>
+            Advanced signal processing and machine learning techniques were then applied to the raw EEG data
+            to extract relevant neural correlates. Special attention was paid to components associated with
+            feedback processing and decision-making.
+        </p>
+    </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am building this site using GitHub Pages!</p>
-        </section>
-    </main>
+    <section id="results">
+        <h2>Key Findings</h2>
+        <p>
+            Preliminary results indicate distinct patterns of neural activation following accurate versus
+            inaccurate responses. We observed significant differences in power spectral densities and
+            event-related potentials (ERPs) across specific scalp regions, particularly in areas associated
+            with cognitive control and reward processing.
+        </p>
+        <div class="image-container">
+            <img src="images/brain_activity_map.png" alt="Heatmap showing areas of significant neural activity" class="project-image">
+            <p class="image-caption">Figure 2: Whole-scalp topographical map showing regions of heightened neural activity during accurate feedback processing.</p>
+        </div>
+        <p>
+            These findings suggest that the brain not only registers the outcome of a learning trial but also
+            generates specific, distributed neural signals reflecting the accuracy of the decision, which
+            are crucial for subsequent behavioral adjustments.
+        </p>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 Romil Imran</p>
-    </footer>
-</body>
-</html>
+    <section id="conclusion">
+        <h2>Conclusion and Future Work</h2>
+        <p>
+            This investigation provides novel insights into the neural underpinnings of reinforcement learning,
+            highlighting the whole-scalp dynamics of accuracy-specific neural correlates. Future work will
+            focus on refining these correlates and exploring their causal roles using brain stimulation techniques.
+        </p>
+        <div class="image-container">
+            <img src="images/results_graph.jpg" alt="Graph comparing neural responses to accurate vs. inaccurate feedback" class="project-image">
+            <p class="image-caption">Figure 3: Bar graph illustrating differences in specific ERP components for accurate vs. inaccurate outcomes.</p>
+        </div>
+    </section>
+</main>
