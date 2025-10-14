@@ -1,127 +1,55 @@
-/* --- 1. GLOBAL RESET AND TYPOGRAPHY --- */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: #222;
+  background-color: #fafafa;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
 }
 
 main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-/* --- 2. HEADER AND NAVIGATION --- */
-header {
-    background: #0056b3;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+h1, h2, h4 {
+  color: #1e293b; /* deep blue-gray for contrast */
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px 10px;
-    transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #003d80;
-    border-radius: 4px;
-}
-
-/* --- 3. FOOTER --- */
-footer {
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    background: #333;
-    color: #fff;
-}
-
-/* --- 4. PROJECT SPECIFIC STYLES --- */
-#project-intro,
-#methodology,
-#results,
-#conclusion {
-    margin-bottom: 40px;
-    padding: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-#project-intro h1 {
-    text-align: center;
-    color: #0056b3;
-}
-
-.intro-paragraph {
-    font-size: 1.1em;
-    text-align: justify;
-    margin-bottom: 30px;
+h1 {
+  font-size: 2rem;
+  border-left: 6px solid #0ea5e9; /* blue accent bar */
+  padding-left: 10px;
 }
 
 h2 {
-    color: #0056b3;
-    border-bottom: 2px solid #0056b3;
-    padding-bottom: 5px;
-    margin-top: 30px;
+  margin-top: 50px;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #e2e8f0; /* light underline */
+  padding-bottom: 6px;
 }
 
-/* Styles for side-by-side images (NEW FLEXBOX LAYOUT) */
-.image-row {
-    display: flex;          /* Enables horizontal layout */
-    flex-wrap: wrap;        /* Allows images to stack on small screens */
-    gap: 20px;              /* Space between images */
-    justify-content: center; /* Centers the images horizontally */
-    margin: 30px 0;
+p, li {
+  font-size: 1rem;
+  color: #334155;
 }
 
-.image-row .image-container {
-    /* FIX: Prevents container from stretching and forces it to size based on the 500x500 image */
-    flex: 0 0 auto; 
-    
-    /* Ensures the containers stack when the screen is smaller than 1040px (500*2 + gaps + margins) */
-    max-width: 50%; 
-    
-    margin: 0; 
-    box-sizing: border-box;
+ul {
+  margin-left: 20px;
 }
 
-/* Image Container Styling */
-.image-container {
-    text-align: center;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
+b {
+  color: #0f172a;
 }
 
 .project-image {
-    /* CRITICAL FOR RESPONSIVENESS: Shrinks image on small screens */
-    max-width: 100%; 
-    height: auto;    
-    display: block;  
-    margin: 0 auto; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
