@@ -99,10 +99,6 @@
         <div style="display: flex; align-items: flex-start; gap: 20px;">
             <div style="flex: 1; min-width: 400px;">
                 <p>
-                    This project integrated <b>machine learning</b> and <b>advanced computational modeling</b> to link brain activity (EEG) with behavioral adaptation, moving beyond traditional univariate methods.
-                </p>
-
-                <p>
                     Multivariate neural signatures were deduced using <b>Linear Discriminant Analysis (LDA)</b> classifiers, trained separately on correct and incorrect whole-scalp EEG activity to identify features best distinguishing between learning states on Day 1 and Day 3. The classifier worked by optimizing a hyperplane in sequential 70 ms time windows to maximize separation between the two days. The performance of this distinction was measured by the <b>Az score</b> (Area Under the ROC Curve); time points with high Az scores indicate a neural correlate where significant learning-related change occurred. The classifier's continuous output, the <b>discriminant score</b>, was extracted as the neural signature. These signatures were spatially interpreted using scalp maps derived from the classifier's weight vector (importance of each electrode) via <b>Haufe's transformation</b> over the <b>-450 ms pre-response to 1000 ms post-response</b> period.
                 </p>
 
