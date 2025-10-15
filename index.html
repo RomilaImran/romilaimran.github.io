@@ -175,6 +175,20 @@
             text-align: center; /* Center the title for a clean look */
         }
 
+        /* NEW: Style for the large-margined text section */
+        /* This ensures the large margins are *only* on the text section and not other elements like the title or gallery */
+        .project-two-text-section {
+            /* This property is crucial to override the large margins on the text section 
+               if the #project-two section had a container that was already limited in width.
+               However, since the text itself has the margin applied inline, 
+               this is a *placeholder* to ensure nothing else is accidentally limited. 
+               The centering and widths of other elements are handled below. */
+            width: 100%; 
+            box-sizing: border-box;
+            padding: 0 50px; /* Optional: small padding inside the text box */
+            text-align: left;
+        }
+
         /* Styles for the image gallery rows */
         .image-gallery-row {
             display: flex;
@@ -204,6 +218,9 @@
         .project-two-results-row { display: none; } /* Hide the old results row */
     </style>
 
+    <div class="project-two-text-section" style="margin: 0 150px 30px 150px;">
+        <p>This is the new introductory section. I've set the left and right margins to 150px, making them quite large, as requested. This text sits above the title and gallery and will have ample whitespace on the sides.</p>
+        </div>
     <h1>Markerless Pose Estimation of Bumblebee Tracks During Sensory-Stimulating Tasks</h1>
     <p style="font-size: 0.9em; margin-top: -5px; margin-bottom: 30px; text-align: center;">
         Note: All images taken from my work. Code found on
