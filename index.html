@@ -176,16 +176,13 @@
         }
 
         /* NEW: Style for the large-margined text section */
-        /* This ensures the large margins are *only* on the text section and not other elements like the title or gallery */
+        /* We've REMOVED the inline margin and use padding to create the large whitespace, */
+        /* ensuring the text is contained and has a border of 150px on both sides. */
         .project-two-text-section {
-            /* This property is crucial to override the large margins on the text section 
-               if the #project-two section had a container that was already limited in width.
-               However, since the text itself has the margin applied inline, 
-               this is a *placeholder* to ensure nothing else is accidentally limited. 
-               The centering and widths of other elements are handled below. */
             width: 100%; 
             box-sizing: border-box;
-            padding: 0 50px; /* Optional: small padding inside the text box */
+            /* CRITICAL CHANGE: Use padding to create the large internal space */
+            padding: 0 150px 30px 150px; 
             text-align: left;
         }
 
@@ -228,8 +225,8 @@
         </a>.
     </p>
 
-    <div class="project-two-text-section" style="margin: 0 150px 30px 150px;">
-      <p>How does the bumblebee brain process colors and shapes and can this information be inferred from their behaviour if introduced to a task where they are incentivised to choose specific shapes and colors?
+    <div class="project-two-text-section">
+        <p>How does the bumblebee brain process colors and shapes and can this information be inferred from their behaviour if introduced to a task where they are incentivised to choose specific shapes and colors?
 
 Markless pose estimation of bumblebee trajectories in 2D space was performed by training a model to identify the head, thorax, yellow band, and tailpoint of several bumblebees as they performed the task shown in figure 1. This was done with 2 cameras positioned to angle up and down. 2D trajectories from these angles were used to configure the 3D reconstruction of the bumblebee’s trajectory. Pose estimation model training was performed using DeepLabCut (Mathis et al., 2018) on a ResNet-50 with 496000 training iterations, followed by 3D reconstruction. Pose estimation and 3D reconstruction were also attempted on Anipose for result quality comparison. Model can be found here (config.yaml file is relevant): https://drive.google.com/drive/folders/1xD71fPoi_r_kLBXHtQfpdMviTBJgf0qK?usp=drive_link
 ​
