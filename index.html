@@ -154,7 +154,42 @@
 
     <section id="project-two">
     <style>
-        /* ... (CSS remains the same) ... */
+        /* --- PROJECT 2 STYLES (Gallery Focus) --- */
+
+        /* Styles for the main title */
+        #project-two h1 {
+            margin-top: 50px; /* Space above the new project title */
+            margin-bottom: 15px;
+            text-align: center; /* Center the title for a clean look */
+        }
+
+        /* Styles for the image gallery rows */
+        .image-gallery-row {
+            display: flex;
+            justify-content: center; /* Center the entire row of images */
+            align-items: flex-start; /* Align images at the top */
+            gap: 20px; /* Space between images */
+            margin-bottom: 30px; /* Space between rows */
+            flex-wrap: wrap; /* Important for responsiveness */
+        }
+
+        .image-gallery-row .gallery-image-container {
+            /* MAXIMUM PRACTICAL SIZE HERE: 450px */
+            flex: 0 1 450px; /* Allow items to shrink/grow slightly but maintain a base width */
+            text-align: center;
+        }
+
+        .image-gallery-row .gallery-image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd; /* Subtle border for definition */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Change cursor to indicate clickability */
+        }
+
+        /* Remove or repurpose unused styles from the original template */
+        .project-two-intro-layout { display: none; } /* Hide the intro layout */
+        .project-two-results-row { display: none; } /* Hide the old results row */
     </style>
 
     <h1>Markerless Pose Estimation of Bumblebee Tracks During Sensory-Stimulating Tasks</h1>
@@ -204,35 +239,35 @@
     </div>
 
     <div class="image-gallery-row">
-        <div class="gallery-image-container">
+        <div class="gallery-image-container" style="flex: 0 1 450px;">
             <a href="images_b/slide7.png" target="_blank">
                 <img src="images_b/slide7.png" alt="Statistical analysis of bee movement metrics." class="project-image">
             </a>
         </div>
-        <div class="gallery-image-container">
+        <div class="gallery-image-container" style="flex: 0 1 450px;">
             <a href="images_b/slide8.png" target="_blank">
                 <img src="images_b/slide8.png" alt="Final visualization of behavior results." class="project-image">
             </a>
         </div>
+        <div class="gallery-image-container" style="flex: 0 1 450px; visibility: hidden;"></div>
+    </div>
+
+    <div class="image-gallery-row">
         <div class="gallery-image-container">
             <a href="images_b/slide9.png" target="_blank">
                 <img src="images_b/slide9.png" alt="Additional data visualization or experimental result 1." class="project-image">
             </a>
         </div>
-        </div>
-
-    <div class="image-gallery-row">
-        <div class="gallery-image-container" style="flex: 0 1 450px;">
+        <div class="gallery-image-container">
             <a href="images_b/slide10.png" target="_blank">
                 <img src="images_b/slide10.png" alt="Additional data visualization or experimental result 2." class="project-image">
             </a>
         </div>
-        <div class="gallery-image-container" style="flex: 0 1 450px;">
+        <div class="gallery-image-container">
             <a href="images_b/slide12.png" target="_blank">
                 <img src="images_b/slide12.png" alt="Additional data visualization or experimental result 3." class="project-image">
             </a>
         </div>
-        <div class="gallery-image-container" style="flex: 0 1 450px; visibility: hidden;"></div>
     </div>
 
 </section>
