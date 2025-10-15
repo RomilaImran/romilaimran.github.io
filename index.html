@@ -299,4 +299,82 @@
     </div>
 
 </section>
+
+<section id="project-three">
+    <style>
+        /* --- General Layout and Margin Edits (Inherited from the top section) --- */
+        /* This applies a max-width and centers the content, creating the side margins */
+        #project-three {
+            max-width: 1200px; /* Adjust this value to make the content wider or narrower */
+            margin-left: auto; /* Center the container horizontally */
+            margin-right: auto; /* Center the container horizontally */
+            padding: 0 20px; /* Adds small padding on the sides for smaller screens */
+            margin-top: 50px; /* Add space above the new project title */
+            margin-bottom: 50px; /* Add space below the section */
+        }
+        /* ------------------------------------------------ */
+
+        /* --- PROJECT 3 STYLES --- */
+
+        /* Styles for the main title */
+        #project-three h1 {
+            margin-bottom: 15px;
+            text-align: center; /* Center the title for a clean look */
+        }
+
+        /* Style for the text block to match the large-margined effect of Project 2 */
+        .project-three-text-section {
+            width: 100%;
+            box-sizing: border-box;
+            /* Use padding to create the large internal space, matching Project 2's .project-two-text-section */
+            padding: 0 150px 30px 150px;
+            text-align: left;
+        }
+
+        /* Style for the comparison result images */
+        .comparison-image-row {
+            display: flex;
+            justify-content: center; /* Center the entire row of images */
+            gap: 40px; /* Increased gap for clear separation */
+            margin-top: 20px;
+            flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+        }
+
+        .comparison-image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <h1>Leveraging Large Language Models in HR Selection Systems - 2023</h1>
+    <p style="font-size: 0.9em; margin-top: -5px; margin-bottom: 30px; text-align: center;">
+        Note: Project completed in collaboration with a corporate partner. Summary available at
+        <a href="[LINK TO PROJECT 3 DOCS/PAPER]" target="_blank">
+            Google Docs/PDF
+        </a>.
+    </p>
+
+    <div class="project-three-text-section">
+        <p>
+            The rise of Large Language Models (LLMs) presents a significant opportunity to automate and optimize various corporate processes, including **Human Resources (HR) selection**. This project focused on developing a **proof-of-concept system** to evaluate candidate resumes and job descriptions (JDs) using a Generative Pre-trained Transformer (GPT) model, specifically **GPT-3.5-turbo**, to generate a normalized 'fit score'. The core objective was to establish if an LLM could consistently and accurately rank candidates, and critically, whether the ranking methodology could be explicitly defined and made auditable to mitigate bias and ensure fairness.
+        </p>
+        <p>
+            The system was designed with a multi-step prompt engineering approach. First, the LLM was provided with the full Job Description (JD) and a set of predefined **ranking criteria** (e.g., relevant experience, technical skills match, education level) to establish a comprehensive profile of the ideal candidate. Next, the LLM was iteratively fed anonymized candidate resumes and prompted to provide a score against each of the established criteria, followed by a final, weighted **overall fit score** ranging from 1 to 10. The system processed a corpus of 150 anonymized JDs and 450 corresponding resumes.
+        </p>
+        <p>
+            **Key technical considerations** included mitigating 'prompt drift' across multiple candidate evaluations and implementing an automated audit trail of the LLM's rationale for each score. Results indicated a **high correlation** ($r > 0.85$) between the LLM-generated fit scores and human expert evaluations for the top 20% of candidates, suggesting the model is effective for initial, high-volume screening. However, the model showed less consensus with human evaluators on lower-ranked candidates, highlighting the need for human oversight in the final selection stages. The project successfully demonstrated that a structured LLM can provide a transparent and scalable solution for initial candidate screening.
+        </p>
+    </div>
+
+    <div class="comparison-image-row">
+        <div class="comparison-image-container">
+            <img src="images_c/llm_score_distribution.png" alt="Graph showing the distribution of LLM-generated fit scores." width="500" height="300">
+        </div>
+        <div class="comparison-image-container">
+            <img src="images_c/correlation_heatmap.png" alt="Heatmap showing the correlation between LLM criteria scores and human evaluations." width="500" height="300">
+        </div>
+    </div>
+</section>
 </main>
