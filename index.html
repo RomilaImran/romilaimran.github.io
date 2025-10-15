@@ -152,125 +152,105 @@
         </div>
     </section>
 
-   <section id="project-two">
-    <style>
-        /* --- PROJECT 2 STYLES (Gallery Focus) --- */
+    <section id="project-two">
+    <style>
+        /* --- PROJECT 2 STYLES (Gallery Focus) --- */
 
-        /* Styles for the main title */
-        #project-two h1 {
-            margin-top: 50px; /* Space above the new project title */
-            margin-bottom: 15px;
-            text-align: center; /* Center the title for a clean look */
-        }
+        /* Styles for the main title */
+        #project-two h1 {
+            margin-top: 50px; /* Space above the new project title */
+            margin-bottom: 15px;
+            text-align: center; /* Center the title for a clean look */
+        }
 
-        /* New style for the injected content to manage its width and margin */
-        .project-description-text {
-            max-width: 900px; /* Limit width for readability */
-            margin: 0 auto 30px auto; /* Center and add space below */
-            padding: 0 15px; /* Padding for small screens */
-            line-height: 1.6; /* Improved readability */
-            text-align: left; /* Left align the body text */
-        }
-        
-        /* Styles for the image gallery rows */
-        .image-gallery-row {
-            display: flex;
-            justify-content: center; /* Center the entire row of images */
-            align-items: flex-start; /* Align images at the top */
-            gap: 20px; /* Space between images */
-            margin-bottom: 30px; /* Space between rows */
-            flex-wrap: wrap; /* Important for responsiveness */
-        }
+        /* Styles for the image gallery rows */
+        .image-gallery-row {
+            display: flex;
+            justify-content: center; /* Center the entire row of images */
+            align-items: flex-start; /* Align images at the top */
+            gap: 20px; /* Space between images */
+            margin-bottom: 30px; /* Space between rows */
+            flex-wrap: wrap; /* Important for responsiveness */
+        }
 
-        .image-gallery-row .gallery-image-container {
-            /* MAXIMUM PRACTICAL SIZE HERE: 450px */
-            flex: 0 1 450px; /* Allow items to shrink/grow slightly but maintain a base width */
-            text-align: center;
-        }
+        .image-gallery-row .gallery-image-container {
+            /* MAXIMUM PRACTICAL SIZE HERE: 450px */
+            flex: 0 1 450px; /* Allow items to shrink/grow slightly but maintain a base width */
+            text-align: center;
+        }
 
-        .image-gallery-row .gallery-image-container img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd; /* Subtle border for definition */
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            cursor: pointer; /* Change cursor to indicate clickability */
-        }
+        .image-gallery-row .gallery-image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd; /* Subtle border for definition */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Change cursor to indicate clickability */
+        }
 
-        /* Remove or repurpose unused styles from the original template */
-        .project-two-intro-layout { display: none; } /* Hide the intro layout */
-        .project-two-results-row { display: none; } /* Hide the old results row */
-    </style>
+        /* Remove or repurpose unused styles from the original template */
+        .project-two-intro-layout { display: none; } /* Hide the intro layout */
+        .project-two-results-row { display: none; } /* Hide the old results row */
+    </style>
 
-    <h1>Markerless Pose Estimation of Bumblebee Tracks During Sensory-Stimulating Tasks</h1>
-    <p style="font-size: 0.9em; margin-top: -5px; margin-bottom: 30px; text-align: center;">
-        Note: All images taken from my work. Code found on
-        <a href="[LINK TO PROJECT 2 GITHUB]" target="_blank">GitHub</a>.
-        Paper/Summary:
-        <a href="[LINK TO PROJECT 2 DOCS/PAPER]" target="_blank">
-            Google Docs/PDF
-        </a>.
-    </p>
+    <h1>Markerless Pose Estimation of Bumblebee Tracks During Sensory-Stimulating Tasks</h1>
+    <p style="font-size: 0.9em; margin-top: -5px; margin-bottom: 30px; text-align: center;">
+        Note: All images taken from my work. Code found on
+        <a href="[LINK TO PROJECT 2 GITHUB]" target="_blank">GitHub</a>.
+        Paper/Summary:
+        <a href="[LINK TO PROJECT 2 DOCS/PAPER]" target="_blank">
+            Google Docs/PDF
+        </a>.
+    </p>
 
-    <div class="project-description-text">
-        <p>
-            How does the bumblebee brain process colors and shapes and can this information be inferred from their behaviour if introduced to a task where they are incentivised to choose specific shapes and colors?
-        </p>
-        <p>
-            Markless pose estimation of bumblebee trajectories in 2D space was performed by training a model to identify the head, thorax, yellow band, and tail of several bumblebees as they performed the task shown in figure 1. This was done with 2 cameras positioned to angle up and down. 2D trajectories from these angles were used to configure the 3D reconstruction of the bumblebee’s trajectory. Pose estimation model training was performed using DeepLabCut (Mathis et al., 2018) on a ResNet-50, followed by 3D reconstruction. Pose estimation and 3D reconstruction were also attempted on Anipose for result quality comparison. Model can be found here (config.yaml file is relevant): <a href="https://drive.google.com/drive/folders/1xD71fPoi_r_kLBXHtQfpdMviTBJgf0qK?usp=drive_link" target="_blank">https://drive.google.com/drive/folders/1xD71fPoi_r_kLBXHtQfpdMviTBJgf0qK?usp=drive_link</a>
-        </p>
-        <p>
-            A behavioural code was generated to classify acceptances and rejections by segmenting the video into 16 sections, outlining the 8 feeders, and determining the direction and speed of the bumblebees (figure 6, 7 & 8).
-        </p>
+    <div class="image-gallery-row">
+        <div class="gallery-image-container">
+            <a href="images_b/slide1.png" target="_blank">
+                <img src="images_b/slide1.png" alt="Bumblebee tracking setup and initial frame." class="project-image">
+            </a>
+        </div>
+        <div class="gallery-image-container">
+            <a href="images_b/slide2.png" target="_blank">
+                <img src="images_b/slide2.png" alt="DeepLabCut labeling interface for bee key points." class="project-image">
+            </a>
+        </div>
+        <div class="gallery-image-container">
+            <a href="images_b/slide3.png" target="_blank">
+                <img src="images_b/slide3.png" alt="Visualization of the estimated pose key points on the bee." class="project-image">
+            </a>
+        </div>
     </div>
-        <div class="image-gallery-row">
-        <div class="gallery-image-container">
-            <a href="images_bee/slide1.png" target="_blank">
-                <img src="images_bee/slide1.png" alt="Bumblebee tracking setup and initial frame." class="project-image">
-            </a>
-        </div>
-        <div class="gallery-image-container">
-            <a href="images_bee/slide2.png" target="_blank">
-                <img src="images_bee/slide2.png" alt="DeepLabCut labeling interface for bee key points." class="project-image">
-            </a>
-        </div>
-        <div class="gallery-image-container">
-            <a href="images_bee/slide3.png" target="_blank">
-                <img src="images_bee/slide3.png" alt="Visualization of the estimated pose key points on the bee." class="project-image">
-            </a>
-        </div>
-    </div>
 
-    <div class="image-gallery-row">
-        <div class="gallery-image-container">
-            <a href="images_bee/slide4.png" target="_blank">
-                <img src="images_bee/slide4.png" alt="Graph showing pose estimation accuracy or loss over training." class="project-image">
-            </a>
-        </div>
-        <div class="gallery-image-container">
-            <a href="images_bee/slide5.png" target="_blank">
-                <img src="images_bee/slide5.png" alt="Diagram illustrating the sensory stimulation task apparatus." class="project-image">
-            </a>
-        </div>
-        <div class="gallery-image-container">
-            <a href="images_bee/slide6.png" target="_blank">
-                <img src="images_bee/slide6.png" alt="Example of a tracked bumblebee path during the task." class="project-image">
-            </a>
-        </div>
-    </div>
+    <div class="image-gallery-row">
+        <div class="gallery-image-container">
+            <a href="images_b/slide4.png" target="_blank">
+                <img src="images_b/slide4.png" alt="Graph showing pose estimation accuracy or loss over training." class="project-image">
+            </a>
+        </div>
+        <div class="gallery-image-container">
+            <a href="images_b/slide5.png" target="_blank">
+                <img src="images_b/slide5.png" alt="Diagram illustrating the sensory stimulation task apparatus." class="project-image">
+            </a>
+        </div>
+        <div class="gallery-image-container">
+            <a href="images_b/slide6.png" target="_blank">
+                <img src="images_b/slide6.png" alt="Example of a tracked bumblebee path during the task." class="project-image">
+            </a>
+        </div>
+    </div>
 
-    <div class="image-gallery-row">
-        <div class="gallery-image-container" style="flex: 0 1 450px;">
-            <a href="images_bee/slide7.png" target="_blank">
-                <img src="images_bee/slide7.png" alt="Statistical analysis of bee movement metrics." class="project-image">
-            </a>
-        </div>
-        <div class="gallery-image-container" style="flex: 0 1 450px;">
-            <a href="images_bee/slide8.png" target="_blank">
-                <img src="images_bee/slide8.png" alt="Final visualization of behavior results." class="project-image">
-            </a>
-        </div>
-        <div class="gallery-image-container" style="flex: 0 1 450px; visibility: hidden;"></div>
-    </div>
+    <div class="image-gallery-row">
+        <div class="gallery-image-container" style="flex: 0 1 450px;">
+            <a href="images_b/slide7.png" target="_blank">
+                <img src="images_b/slide7.png" alt="Statistical analysis of bee movement metrics." class="project-image">
+            </a>
+        </div>
+        <div class="gallery-image-container" style="flex: 0 1 450px;">
+            <a href="images_b/slide8.png" target="_blank">
+                <img src="images_b/slide8.png" alt="Final visualization of behavior results." class="project-image">
+            </a>
+        </div>
+        <div class="gallery-image-container" style="flex: 0 1 450px; visibility: hidden;"></div>
+    </div>
 
 </section>
 </main>
