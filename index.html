@@ -89,9 +89,9 @@
         #project-intro,
         #methodology,
         #results {
-            max-width: 1200px; /* Adjust this value to make the content wider or narrower */
-            margin-left: auto; /* Center the container horizontally */
-            margin-right: auto; /* Center the container horizontally */
+            max-width: 1200px; /* Center the container horizontally */
+            margin-left: auto;
+            margin-right: auto;
             padding: 0 20px; /* Adds small padding on the sides for smaller screens */
         }
         /* ------------------------------------------------ */
@@ -258,10 +258,18 @@
             margin-bottom: 15px;
             text-align: center; /* Center the title for a clean look */
         }
+        
+        /* ADDED: Style for the header content block in project two to match the 150px padding */
+        .project-two-header-content {
+            width: 100%;
+            box-sizing: border-box;
+            /* Apply the 150px margin effect to the header area */
+            padding: 0 150px; 
+            margin-bottom: 30px;
+        }
+
 
         /* NEW: Style for the large-margined text section */
-        /* We've REMOVED the inline margin and use padding to create the large whitespace, */
-        /* ensuring the text is contained and has a border of 150px on both sides. */
         .project-two-text-section {
             width: 100%;
             box-sizing: border-box;
@@ -299,11 +307,14 @@
         .project-two-results-row { display: none; } /* Hide the old results row */
     </style>
 
-    <h1>Kinematic Correlates of Visual Decision-making in Bumblebees for Inferring Cognitive Strategies of Color and Shape Perception</h1>
-    <p style="font-size: 0.9em; margin-top: -5px; margin-bottom: 30px; text-align: center;">
-        Note: All images taken from my work. Code found on
-        <a href="[LINK TO PROJECT 2 GITHUB]" target="_blank">GitHub</a>. Supervisor: Dr. Mai Morimoto, Dr. Huai-Ti Lin Lab @ Imperial College London, Bioengineering.
-    </p>
+    <!-- NEW WRAPPER ADDED TO APPLY 150PX MARGIN TO HEADER CONTENT -->
+    <div class="project-two-header-content">
+        <h1>Kinematic Correlates of Visual Decision-making in Bumblebees for Inferring Cognitive Strategies of Color and Shape Perception</h1>
+        <p style="font-size: 0.9em; margin-top: -5px; margin-bottom: 0px; text-align: center;">
+            Note: All images taken from my work. Code found on
+            <a href="[LINK TO PROJECT 2 GITHUB]" target="_blank">GitHub</a>. Supervisor: Dr. Mai Morimoto, Dr. Huai-Ti Lin Lab @ Imperial College London, Bioengineering.
+        </p>
+    </div>
 
     <div class="project-two-text-section">
         <p>How does the bumblebee brain process colors and shapes and can this information be inferred from their behaviour if introduced to a task where they are incentivised to choose specific shapes and colors?</p>
