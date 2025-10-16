@@ -428,34 +428,6 @@
         }
         /* ------------------------------------------------ */
 
-        <section id="project-three">
-    <style>
-        /* --- General Layout and Margin Edits (Inherited from the top section) --- */
-        /* This applies a max-width and centers the content, creating the side margins */
-        #project-three {
-            max-width: 1200px; /* Adjust this value to make the content wider or narrower */
-            margin-left: auto; /* Center the container horizontally */
-            margin-right: auto; /* Center the container horizontally */
-            padding: 0 20px; /* Adds small padding on the sides for smaller screens */
-            margin-top: 50px; /* Add space above the new project title */
-            margin-bottom: 50px; /* Add space below the section */
-        }
-        /* ------------------------------------------------ */
-
-        <section id="project-three">
-    <style>
-        /* --- General Layout and Margin Edits (Inherited from the top section) --- */
-        /* This applies a max-width and centers the content, creating the side margins */
-        #project-three {
-            max-width: 1200px; /* Adjust this value to make the content wider or narrower */
-            margin-left: auto; /* Center the container horizontally */
-            margin-right: auto; /* Center the container horizontally */
-            padding: 0 20px; /* Adds small padding on the sides for smaller screens */
-            margin-top: 50px; /* Add space above the new project title */
-            margin-bottom: 50px; /* Add space below the section */
-        }
-        /* ------------------------------------------------ */
-
         /* --- PROJECT 3 STYLES --- */
 
         /* Styles for the main title */
@@ -499,12 +471,13 @@
         }
 
         .llm-peacock-wrapper a {
-            display: block; /* Make the anchor tag block-level to hold the image width */
+            display: inline-block; /* Changed to inline-block to respect the centered text-align in the wrapper */
         }
 
         .llm-peacock-wrapper img {
-            /* *** CRITICAL FIX: Set width to 100% of the container, which aligns with the text block. *** */
-            width: 100%; 
+            /* *** CHANGE HERE: Added max-width to reduce image size *** */
+            width: 100%; /* Allows it to be responsive on smaller screens */
+            max-width: 600px; /* Reduces the image size to a maximum of 600px */
             height: auto; /* Maintain aspect ratio */
             cursor: pointer;
             border: 1px solid #ddd; /* Added border for visual separation */
