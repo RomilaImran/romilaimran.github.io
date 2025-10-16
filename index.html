@@ -1,4 +1,88 @@
 <main>
+    <section id="header-bio">
+        <style>
+            /* --- HEADER BIO STYLES (NEW SECTION) --- */
+            #header-bio {
+                max-width: 1200px; /* Match project sections max-width */
+                margin: 40px auto 30px auto; /* Top, auto for center, bottom margin */
+                padding: 20px 40px;
+                text-align: center;
+                border-bottom: 3px solid #f0f0f0; /* Subtle separator line */
+                /* Optional: box-shadow for a lifted effect */
+                /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); */
+            }
+
+            #header-bio h1 {
+                font-size: 2.5em;
+                margin-bottom: 5px;
+                color: #333; /* Darker text for main name */
+            }
+
+            .bio-details-row {
+                display: flex;
+                flex-wrap: wrap; /* Ensure it wraps on small screens */
+                justify-content: center;
+                gap: 20px 40px; /* Vertical and horizontal gap */
+                margin-top: 15px;
+                font-size: 1.1em;
+                color: #555;
+            }
+
+            .bio-details-row span {
+                /* Style for individual detail blocks */
+                padding: 5px 0;
+            }
+
+            .passion-list {
+                margin-top: 20px;
+                padding: 10px;
+                /* Optional: Light background for the passion section */
+                /* background-color: #fafafa; */
+                border-radius: 5px;
+            }
+
+            .passion-list h3 {
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-size: 1.3em;
+                color: #444;
+            }
+
+            .passion-list p {
+                font-style: italic;
+                font-size: 1em;
+                line-height: 1.5;
+                color: #666;
+            }
+            /* ------------------------------------- */
+        </style>
+
+        <h1>Romila Imran</h1>
+
+        <div class="bio-details-row">
+            <span>
+                🎓 <strong>GPA/ Classification:</strong> 4.0/4.0, First Class Honors
+            </span>
+            <span>
+                🧠 <strong>President of Neural Networks (Neuroscience)</strong> @ Leeds (2022-2023)
+            </span>
+            <span>
+                ✍️ <strong>Writer</strong> @ Neuro Elevation (2022-2023)
+            </span>
+            <span>
+                🔬 <strong>Volunteer</strong> @ SOAR/BISCCIT conference @ Imperial
+            </span>
+        </div>
+
+        <div class="passion-list">
+            <h3>Passions:</h3>
+            <p>
+                Neural interfaces, neurotechnology, computational neuroscience, electrophysiology, neurobiology
+            </p>
+        </div>
+
+    </section>
+
     <section id="project-intro">
     <style>
         /* --- General Layout and Margin Edits (NEW CODE) --- */
@@ -163,9 +247,9 @@
             <img src="images/plot1.PNG" alt="Figure 4: Bar graph illustrating differences in specific ERP components for accurate vs. inaccurate outcomes." class="project-image" width="520" height="500">
         </div>
     </div>
- </section>
+</section>
 
-    <section id="project-two">
+<section id="project-two">
     <style>
         /* --- PROJECT 2 STYLES (Gallery Focus) --- */
 
@@ -180,10 +264,10 @@
         /* We've REMOVED the inline margin and use padding to create the large whitespace, */
         /* ensuring the text is contained and has a border of 150px on both sides. */
         .project-two-text-section {
-            width: 100%; 
+            width: 100%;
             box-sizing: border-box;
             /* CRITICAL CHANGE: Use padding to create the large internal space */
-            padding: 0 150px 30px 150px; 
+            padding: 0 150px 30px 150px;
             text-align: left;
         }
 
@@ -223,9 +307,9 @@
     </p>
 
     <div class="project-two-text-section">
-     <p>How does the bumblebee brain process colors and shapes and can this information be inferred from their behaviour if introduced to a task where they are incentivised to choose specific shapes and colors?</p>
-     <p>Markless pose estimation of bumblebee trajectories in 2D space was performed by training a model to identify the head, thorax, yellow band, and tailpoint of several bumblebees as they performed the task shown in figure 1. This was done with 2 cameras positioned to angle up and down. 2D trajectories from these angles were used to configure the 3D reconstruction of the bumblebee’s trajectory. Pose estimation model training was performed using DeepLabCut (Mathis et al., 2018) on a ResNet-50 with 496000 training iterations, followed by 3D reconstruction. Pose estimation and 3D reconstruction were also attempted on Anipose for result quality comparison. Model can be found <a href="https://drive.google.com/drive/folders/1xD71fPoi_r_kLBXHtQfpdMviTBJgf0qK?usp=drive_link" target="_blank">here</a> (config.yaml file is relevant). A behavioural code was generated to classify acceptances and rejections by segmenting the video into 16 sections, outlining the 8 feeders, and determining the direction and speed of the bumblebees (figure 6, 7 & 8).</p>
-     <p>Figure 9, 10 and 11 are just an example of the trajectory of a bumblebee from a test video after being trained to land on 45° angled stimuli and a density map of its most common position (scanning position) before landing on the correct (45°) and incorrect (135°) feeders. This project is ongoing at Imperial as of 2025 and is awaiting a publication.</p>
+        <p>How does the bumblebee brain process colors and shapes and can this information be inferred from their behaviour if introduced to a task where they are incentivised to choose specific shapes and colors?</p>
+        <p>Markless pose estimation of bumblebee trajectories in 2D space was performed by training a model to identify the head, thorax, yellow band, and tailpoint of several bumblebees as they performed the task shown in figure 1. This was done with 2 cameras positioned to angle up and down. 2D trajectories from these angles were used to configure the 3D reconstruction of the bumblebee’s trajectory. Pose estimation model training was performed using DeepLabCut (Mathis et al., 2018) on a ResNet-50 with 496000 training iterations, followed by 3D reconstruction. Pose estimation and 3D reconstruction were also attempted on Anipose for result quality comparison. Model can be found <a href="https://drive.google.com/drive/folders/1xD71fPoi_r_kLBXHtQfpdMviTBJgf0qK?usp=drive_link" target="_blank">here</a> (config.yaml file is relevant). A behavioural code was generated to classify acceptances and rejections by segmenting the video into 16 sections, outlining the 8 feeders, and determining the direction and speed of the bumblebees (figure 6, 7 & 8).</p>
+        <p>Figure 9, 10 and 11 are just an example of the trajectory of a bumblebee from a test video after being trained to land on 45° angled stimuli and a density map of its most common position (scanning position) before landing on the correct (45°) and incorrect (135°) feeders. This project is ongoing at Imperial as of 2025 and is awaiting a publication.</p>
     </div>
 
     <div class="image-gallery-row">
@@ -347,7 +431,7 @@
 
     <h1>Leveraging Large Language Models in Selection Systems - 2023</h1>
     <p style="font-size: 0.9em; margin-top: -5px; margin-bottom: 30px; text-align: center;">
-        Note: Project completed in 2023 @ GenerationSuccess & University of Leeds. Supervisor: Dr. Samit Chakrabarty. Parts of this report can be viewed with parts redacted <a href="https://docs.google.com/document/d/17PFg5QgOGMnfPhb4aPFqrgcbxAQ5ltdy31hbjLmMAYQ/edit?tab=t.0">here</a> 
+        Note: Project completed in 2023 @ GenerationSuccess & University of Leeds. Supervisor: Dr. Samit Chakrabarty. Parts of this report can be viewed with parts redacted <a href="https://docs.google.com/document/d/17PFg5QgOGMnfPhb4aPFqrgcbxAQ5ltdy31hbjLmMAYQ/edit?tab=t.0">here</a>
     </p>
 
     <div class="project-three-text-section">
