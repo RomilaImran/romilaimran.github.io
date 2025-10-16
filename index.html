@@ -530,7 +530,7 @@
 
 </section>
 
-    <section id="project-four">
+   <section id="project-four">
     <style>
         /* --- PROJECT 4 STYLES (Gallery Focus) --- */
 
@@ -545,10 +545,10 @@
         .project-four-header-content {
             width: 100%;
             box-sizing: border-box;
-            /* INCREASED PADDING for 'bigger margins' */
+            /* INCREASED PADDING for 'bigger margins' (200px) */
             padding: 0 200px; 
             margin-bottom: 30px;
-            text-align: center; /* Ensure contents like the instructor line are centered */
+            text-align: center; /* Title/Instructor remains centered */
         }
 
 
@@ -556,15 +556,15 @@
         .project-four-text-section {
             width: 100%;
             box-sizing: border-box;
-            /* INCREASED PADDING for 'bigger margins' */
+            /* INCREASED PADDING for 'bigger margins' (200px) */
             padding: 0 200px 30px 200px;
-            /* CENTER ALIGN THE TEXT */
-            text-align: center; 
+            /* EDITED: LEFT ALIGN THE TEXT */
+            text-align: left; 
         }
 
-        /* Ensure paragraphs inside the centered section are also centered */
+        /* EDITED: Ensure paragraphs inside the text section are left aligned */
         .project-four-text-section p {
-            text-align: center;
+            text-align: left;
         }
 
         /* Styles for the image gallery rows (3x3x3 layout logic) */
@@ -578,11 +578,11 @@
         }
 
         .image-gallery-row .gallery-image-container {
-            /* Set a flexible base width for 3 items per row on large screens. 
-               The flex-basis is just under 33% to account for the gaps. */
+            /* Set a flexible base width for 3 items per row on large screens. */
             flex: 1 1 30%; 
-            max-width: 450px; /* Capping the maximum size of a single image container */
-            min-width: 250px; /* Minimum size before wrapping */
+            /* EDITED: Significantly reduced max-width from 450px to 350px */
+            max-width: 350px; 
+            min-width: 200px; /* Adjusted min-width for better scaling */
             text-align: center;
         }
 
@@ -624,7 +624,7 @@
     </div>
 
     <div class="project-four-text-section">
-        <p>How does the bumblebee brain process colors and shapes and can this information be inferred from their behaviour if introduced to a task where they are incentivised to choose specific shapes and colors?</p>
+        <p>How does the **bumblebee brain** process colors and shapes and can this information be inferred from their behaviour if introduced to a task where they are incentivised to choose specific shapes and colors?</p>
         <p>Markless pose estimation of bumblebee trajectories in 2D space was performed by training a model to identify the head, thorax, yellow band, and tailpoint of several bumblebees as they performed the task shown in figure 1. This was done with 2 cameras positioned to angle up and down. 2D trajectories from these angles were used to configure the 3D reconstruction of the bumblebee’s trajectory. Pose estimation model training was performed using DeepLabCut (Mathis et al., 2018) on a ResNet-50 with 496000 training iterations, followed by 3D reconstruction. Pose estimation and 3D reconstruction were also attempted on Anipose for result quality comparison. Model can be found <a href="https://drive.google.com/drive/folders/1xD71fPoi_r_kLBXHtQfpdMviTBJgf0qK?usp=drive_link" target="_blank">here</a> (config.yaml file is relevant). A behavioural code was generated to classify acceptances and rejections by segmenting the video into 16 sections, outlining the 8 feeders, and determining the direction and speed of the bumblebees (figure 6, 7 & 8).</p>
         <p>Figure 9, 10 and 11 are just an example of the trajectory of a bumblebee from a test video after being trained to land on 45° angled stimuli and a density map of its most common position (scanning position) before landing on the correct (45°) and incorrect (135°) feeders. This project is ongoing at Imperial as of 2025 and is awaiting a publication.</p>
     </div>
