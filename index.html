@@ -442,6 +442,20 @@
         }
         /* ------------------------------------------------ */
 
+        <section id="project-three">
+    <style>
+        /* --- General Layout and Margin Edits (Inherited from the top section) --- */
+        /* This applies a max-width and centers the content, creating the side margins */
+        #project-three {
+            max-width: 1200px; /* Adjust this value to make the content wider or narrower */
+            margin-left: auto; /* Center the container horizontally */
+            margin-right: auto; /* Center the container horizontally */
+            padding: 0 20px; /* Adds small padding on the sides for smaller screens */
+            margin-top: 50px; /* Add space above the new project title */
+            margin-bottom: 50px; /* Add space below the section */
+        }
+        /* ------------------------------------------------ */
+
         /* --- PROJECT 3 STYLES --- */
 
         /* Styles for the main title */
@@ -476,27 +490,25 @@
             cursor: pointer;
         }
 
-        /* NEW/UPDATED STYLES FOR THE PONDERING PEACOCK IMAGE */
+        /* UPDATED STYLES FOR THE PONDERING PEACOCK IMAGE TO MATCH TEXT WIDTH */
         .llm-peacock-wrapper {
-            /* This wrapper will help center the image and control its overall margin */
+            /* This wrapper is now set up to match the effective content width */
             text-align: center;
-            margin: 20px auto 0 auto; /* Top margin, auto for horizontal centering */
-            max-width: 1200px; /* Match section width for proper alignment */
-            padding: 0 20px; /* Match the padding of the section itself */
-            box-sizing: border-box; /* Include padding in width calculation */
+            margin-top: 20px; /* Space above the image */
+            /* Crucially, we remove unnecessary fixed width and let the image fill the space */
         }
 
         .llm-peacock-wrapper a {
-            display: inline-block; /* Allows vertical alignment and margin application to the link */
+            display: block; /* Make the anchor tag block-level to hold the image width */
         }
 
         .llm-peacock-wrapper img {
-            width: 48px; /* Explicitly set width */
-            height: 24px; /* Explicitly set height */
+            /* *** CRITICAL FIX: Set width to 100% of the container, which aligns with the text block. *** */
+            width: 100%; 
+            height: auto; /* Maintain aspect ratio */
             cursor: pointer;
-            /* Optional: if you want a subtle border or shadow around this specific image */
-            /* border: 1px solid #eee; */
-            /* box-shadow: 1px 1px 3px rgba(0,0,0,0.05); */
+            border: 1px solid #ddd; /* Added border for visual separation */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
         }
     </style>
 
