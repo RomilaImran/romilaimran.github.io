@@ -531,140 +531,162 @@
 </section>
 
     <section id="project-four">
-    <style>
-        /* --- PROJECT 4 STYLES (Gallery Focus) --- */
+    <style>
+        /* --- PROJECT 4 STYLES (Gallery Focus) --- */
 
-        /* Styles for the main title */
-        #project-four h1 {
-            margin-top: 50px; /* Space above the new project title */
-            margin-bottom: 15px;
-            text-align: center; /* Center the title for a clean look */
-        }
-        
-        /* ADDED: Style for the header content block in project four to match the 150px padding */
-        .project-four-header-content {
-            width: 100%;
-            box-sizing: border-box;
-            /* Apply the 150px margin effect to the header area */
-            padding: 0 150px; 
-            margin-bottom: 30px;
-        }
+        /* Styles for the main title */
+        #project-four h1 {
+            margin-top: 50px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        /* Style for the header content block in project four (Title/Instructor) */
+        .project-four-header-content {
+            width: 100%;
+            box-sizing: border-box;
+            /* INCREASED PADDING for 'bigger margins' */
+            padding: 0 200px; 
+            margin-bottom: 30px;
+            text-align: center; /* Ensure contents like the instructor line are centered */
+        }
 
 
-        /* NEW: Style for the large-margined text section */
-        .project-four-text-section {
-            width: 100%;
-            box-sizing: border-box;
-            /* CRITICAL CHANGE: Use padding to create the large internal space */
-            padding: 0 150px 30px 150px;
-            text-align: left;
-        }
+        /* Style for the large-margined text section */
+        .project-four-text-section {
+            width: 100%;
+            box-sizing: border-box;
+            /* INCREASED PADDING for 'bigger margins' */
+            padding: 0 200px 30px 200px;
+            /* CENTER ALIGN THE TEXT */
+            text-align: center; 
+        }
 
-        /* Styles for the image gallery rows */
-        .image-gallery-row {
-            display: flex;
-            justify-content: center; /* Center the entire row of images */
-            align-items: flex-start; /* Align images at the top */
-            gap: 20px; /* Space between images */
-            margin-bottom: 30px; /* Space between rows */
-            flex-wrap: wrap; /* Important for responsiveness */
-        }
+        /* Ensure paragraphs inside the centered section are also centered */
+        .project-four-text-section p {
+            text-align: center;
+        }
 
-        .image-gallery-row .gallery-image-container {
-            /* MAXIMUM PRACTICAL SIZE HERE: 450px */
-            flex: 0 1 450px; /* Allow items to shrink/grow slightly but maintain a base width */
-            text-align: center;
-        }
+        /* Styles for the image gallery rows (3x3x3 layout logic) */
+        .image-gallery-row {
+            display: flex;
+            justify-content: center; /* Center the entire row of images */
+            align-items: flex-start;
+            gap: 20px; /* Space between images */
+            margin-bottom: 30px; /* Space between rows */
+            flex-wrap: wrap; /* Important for responsiveness */
+        }
 
-        .image-gallery-row .gallery-image-container img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd; /* Subtle border for definition */
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            cursor: pointer; /* Change cursor to indicate clickability */
-        }
+        .image-gallery-row .gallery-image-container {
+            /* Set a flexible base width for 3 items per row on large screens. 
+               The flex-basis is just under 33% to account for the gaps. */
+            flex: 1 1 30%; 
+            max-width: 450px; /* Capping the maximum size of a single image container */
+            min-width: 250px; /* Minimum size before wrapping */
+            text-align: center;
+        }
 
-        /* Remove or repurpose unused styles from the original template */
-        .project-four-intro-layout { display: none; } /* Hide the intro layout */
-        .project-four-results-row { display: none; } /* Hide the old results row */
-    </style>
+        .image-gallery-row .gallery-image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
 
-        <div class="project-four-header-content">
-        <h1>Dissecting Ion Channel Contributions to Action Potential Dynamics in Lymnaea stagnalis</h1>
-        <p style="font-size: 0.9em; margin-top: -5px; margin-bottom: 0px; text-align: center;">
-            Instructor: Dr Jim Deuchars
-        </p>
-    </div>
+        /* --- RESPONSIVENESS FOR MARGINS --- */
 
-    <div class="project-four-text-section">
-        <p>How does the bumblebee brain process colors and shapes and can this information be inferred from their behaviour if introduced to a task where they are incentivised to choose specific shapes and colors?</p>
-        <p>Markless pose estimation of bumblebee trajectories in 2D space was performed by training a model to identify the head, thorax, yellow band, and tailpoint of several bumblebees as they performed the task shown in figure 1. This was done with 2 cameras positioned to angle up and down. 2D trajectories from these angles were used to configure the 3D reconstruction of the bumblebee’s trajectory. Pose estimation model training was performed using DeepLabCut (Mathis et al., 2018) on a ResNet-50 with 496000 training iterations, followed by 3D reconstruction. Pose estimation and 3D reconstruction were also attempted on Anipose for result quality comparison. Model can be found <a href="https://drive.google.com/drive/folders/1xD71fPoi_r_kLBXHtQfpdMviTBJgf0qK?usp=drive_link" target="_blank">here</a> (config.yaml file is relevant). A behavioural code was generated to classify acceptances and rejections by segmenting the video into 16 sections, outlining the 8 feeders, and determining the direction and speed of the bumblebees (figure 6, 7 & 8).</p>
-        <p>Figure 9, 10 and 11 are just an example of the trajectory of a bumblebee from a test video after being trained to land on 45° angled stimuli and a density map of its most common position (scanning position) before landing on the correct (45°) and incorrect (135°) feeders. This project is ongoing at Imperial as of 2025 and is awaiting a publication.</p>
-    </div>
+        /* Reduce margin/padding for medium screens */
+        @media (max-width: 1200px) {
+            .project-four-header-content,
+            .project-four-text-section {
+                padding: 0 50px; 
+            }
+        }
+        /* Minimal padding for mobile screens */
+        @media (max-width: 600px) {
+            .project-four-header-content,
+            .project-four-text-section {
+                padding: 0 15px; 
+            }
+        }
 
-    <div class="image-gallery-row">
-        <div class="gallery-image-container">
-            <a href="images/IMG-20251016-WA0001.jpg" target="_blank">
-                <img src="images/IMG-20251016-WA0001.jpg" alt="Bumblebee tracking setup and initial frame." class="project-image">
-            </a>
-                </div>
-        <div class="gallery-image-container">
-            <a href="images/IMG-20251016-WA0002.jpg" target="_blank">
-                <img src="images/IMG-20251016-WA0002.jpg" alt="DeepLabCut labeling interface for bee key points." class="project-image">
-            </a>
-        </div>
-        <div class="gallery-image-container">
-            <a href="images/IMG-20251016-WA0003.jpg" target="_blank">
-                <img src="images/IMG-20251016-WA0003.jpg" alt="Visualization of the estimated pose key points on the bee." class="project-image">
-            </a>
-        </div>
-    </div>
+        /* Remove or repurpose unused styles from the original template */
+        .project-four-intro-layout { display: none; }
+        .project-four-results-row { display: none; }
+    </style>
 
-    <div class="image-gallery-row">
-        <div class="gallery-image-container">
-            <a href="images/IMG-20251016-WA0004.jpg" target="_blank">
-                <img src="images/IMG-20251016-WA0004.jpg" alt="Graph showing pose estimation accuracy or loss over training." class="project-image">
-            </a>
-        </div>
-        <div class="gallery-image-container">
-            <a href="images/IMG-20251016-WA0005.jpg" target="_blank">
-                <img src="images/IMG-20251016-WA0005.jpg" alt="Diagram illustrating the sensory stimulation task apparatus." class="project-image">
-            </a>
-        </div>
-        <div class="gallery-image-container">
-            <a href="images/IMG-20251016-WA0006.jpg" target="_blank">
-                <img src="images/IMG-20251016-WA0006.jpg" alt="Example of a tracked bumblebee path during the task." class="project-image">
-            </a>
-        </div>
-    </div>
+    <div class="project-four-header-content">
+        <h1>Dissecting Ion Channel Contributions to Action Potential Dynamics in Lymnaea stagnalis</h1>
+        <p style="font-size: 0.9em; margin-top: -5px; margin-bottom: 0px;">
+            Instructor: Dr Jim Deuchars
+        </p>
+    </div>
 
-    <div class="image-gallery-row">
-        <div class="gallery-image-container" style="flex: 0 1 450px;">
-            <a href="images/IMG-20251016-WA0007.jpg" target="_blank">
-                <img src="images/IMG-20251016-WA0007.jpg" alt="Statistical analysis of bee movement metrics." class="project-image">
-            </a>
-        </div>
-        <div class="gallery-image-container" style="flex: 0 1 450px;">
-            <a href="images/IMG-20251016-WA0008.jpg" target="_blank">
-                <img src="images/IMG-20251016-WA0008.jpg" alt="Final visualization of behavior results." class="project-image">
-            </a>
-        </div>
-        <div class="gallery-image-container">
-            <a href="images/IMG-20251016-WA0009.jpg" target="_blank">
-                <img src="images/IMG-20251016-WA0009.jpg" alt="Additional data visualization or experimental result 1." class="project-image">
-            </a>
-        </div>
-    </div>
+    <div class="project-four-text-section">
+        <p>How does the bumblebee brain process colors and shapes and can this information be inferred from their behaviour if introduced to a task where they are incentivised to choose specific shapes and colors?</p>
+        <p>Markless pose estimation of bumblebee trajectories in 2D space was performed by training a model to identify the head, thorax, yellow band, and tailpoint of several bumblebees as they performed the task shown in figure 1. This was done with 2 cameras positioned to angle up and down. 2D trajectories from these angles were used to configure the 3D reconstruction of the bumblebee’s trajectory. Pose estimation model training was performed using DeepLabCut (Mathis et al., 2018) on a ResNet-50 with 496000 training iterations, followed by 3D reconstruction. Pose estimation and 3D reconstruction were also attempted on Anipose for result quality comparison. Model can be found <a href="https://drive.google.com/drive/folders/1xD71fPoi_r_kLBXHtQfpdMviTBJgf0qK?usp=drive_link" target="_blank">here</a> (config.yaml file is relevant). A behavioural code was generated to classify acceptances and rejections by segmenting the video into 16 sections, outlining the 8 feeders, and determining the direction and speed of the bumblebees (figure 6, 7 & 8).</p>
+        <p>Figure 9, 10 and 11 are just an example of the trajectory of a bumblebee from a test video after being trained to land on 45° angled stimuli and a density map of its most common position (scanning position) before landing on the correct (45°) and incorrect (135°) feeders. This project is ongoing at Imperial as of 2025 and is awaiting a publication.</p>
+    </div>
 
-    <div class="image-gallery-row">
-        <div class="gallery-image-container">
-            <a href="images/IMG-20251016-WA0010.jpg" target="_blank">
-                <img src="images/IMG-20251016-WA0010.jpg" alt="Additional data visualization or experimental result 2." class="project-image">
-            </a>
-        </div>
-       
-    </div>
+    <!-- Gallery Row 1: 3 Images -->
+    <div class="image-gallery-row">
+        <div class="gallery-image-container">
+            <a href="images/IMG-20251016-WA0001.jpg" target="_blank">
+                <img src="images/IMG-20251016-WA0001.jpg" alt="Bumblebee tracking setup and initial frame." class="project-image">
+            </a>
+        </div>
+        <div class="gallery-image-container">
+            <a href="images/IMG-20251016-WA0002.jpg" target="_blank">
+                <img src="images/IMG-20251016-WA0002.jpg" alt="DeepLabCut labeling interface for bee key points." class="project-image">
+            </a>
+        </div>
+        <div class="gallery-image-container">
+            <a href="images/IMG-20251016-WA0003.jpg" target="_blank">
+                <img src="images/IMG-20251016-WA0003.jpg" alt="Visualization of the estimated pose key points on the bee." class="project-image">
+            </a>
+        </div>
+    </div>
+
+    <!-- Gallery Row 2: 3 Images -->
+    <div class="image-gallery-row">
+        <div class="gallery-image-container">
+            <a href="images/IMG-20251016-WA0004.jpg" target="_blank">
+                <img src="images/IMG-20251016-WA0004.jpg" alt="Graph showing pose estimation accuracy or loss over training." class="project-image">
+            </a>
+        </div>
+        <div class="gallery-image-container">
+            <a href="images/IMG-20251016-WA0005.jpg" target="_blank">
+                <img src="images/IMG-20251016-WA0005.jpg" alt="Diagram illustrating the sensory stimulation task apparatus." class="project-image">
+            </a>
+        </div>
+        <div class="gallery-image-container">
+            <a href="images/IMG-20251016-WA0006.jpg" target="_blank">
+                <img src="images/IMG-20251016-WA0006.jpg" alt="Example of a tracked bumblebee path during the task." class="project-image">
+            </a>
+        </div>
+    </div>
+
+    <!-- Gallery Row 3: 3 Images -->
+    <div class="image-gallery-row">
+        <div class="gallery-image-container">
+            <a href="images/IMG-20251016-WA0007.jpg" target="_blank">
+                <img src="images/IMG-20251016-WA0007.jpg" alt="Statistical analysis of bee movement metrics." class="project-image">
+            </a>
+        </div>
+        <div class="gallery-image-container">
+            <a href="images/IMG-20251016-WA0008.jpg" target="_blank">
+                <img src="images/IMG-20251016-WA0008.jpg" alt="Final visualization of behavior results." class="project-image">
+            </a>
+        </div>
+        <div class="gallery-image-container">
+            <a href="images/IMG-20251016-WA0009.jpg" target="_blank">
+                <img src="images/IMG-20251016-WA0009.jpg" alt="Additional data visualization or experimental result 1." class="project-image">
+            </a>
+        </div>
+    </div>
 
 </section>
+
 
 </main>
