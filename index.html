@@ -130,6 +130,7 @@
             max-width: 550px;
             height: 450px;
             width: auto;
+            cursor: pointer; /* ADDED: Makes the cursor a pointer to indicate clickability */
         }
 
         /* Standard image container for the technique image */
@@ -140,9 +141,11 @@
             margin-top: 20px; /* Add space below the preceding text */
         }
 
+        /* ADDED: Styling for the method image to be clickable */
         #methodology .image-container img {
             width: 550px;
             height: 450px;
+            cursor: pointer; /* ADDED: Makes the cursor a pointer to indicate clickability */
         }
 
         /* Style for result images in a row */
@@ -151,6 +154,11 @@
             justify-content: center;
             gap: 20px; /* Added gap for better separation of result images */
             flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+        }
+        
+        /* ADDED: Styling for the result images to be clickable */
+        #results .image-container img {
+            cursor: pointer; /* ADDED: Makes the cursor a pointer to indicate clickability */
         }
     </style>
 
@@ -182,7 +190,9 @@
         </div>
 
         <div class="method-image-container">
-            <img src="images/method1.PNG" alt="Figure 1: Illustration of the experimental setup, showing a participant undergoing EEG recording during the reinforcement learning task." class="project-image" width="100" height="100">
+            <a href="images/method1.PNG" target="_blank">
+                <img src="images/method1.PNG" alt="Figure 1: Illustration of the experimental setup, showing a participant undergoing EEG recording during the reinforcement learning task." class="project-image" width="100" height="100">
+            </a>
         </div>
     </div>
 </section>
@@ -223,7 +233,9 @@
         </div>
 
         <div class="image-container">
-            <img src="images/technique1.PNG" alt="Figure 2: Whole-scalp topographical map highlighting regions involved in data acquisition." class="project-image" width="500" height="400">
+            <a href="images/technique1.PNG" target="_blank">
+                <img src="images/technique1.PNG" alt="Figure 2: Whole-scalp topographical map highlighting regions involved in data acquisition." class="project-image" width="500" height="400">
+            </a>
         </div>
     </div>
 
@@ -243,10 +255,14 @@
 
     <div class="image-row">
         <div class="image-container">
-            <img src="images/result1.PNG" alt="Figure 3: Whole-scalp topographical map showing regions of heightened neural activity during accurate feedback processing." class="project-image" width="550" height="550">
+            <a href="images/result1.PNG" target="_blank">
+                <img src="images/result1.PNG" alt="Figure 3: Whole-scalp topographical map showing regions of heightened neural activity during accurate feedback processing." class="project-image" width="550" height="550">
+            </a>
         </div>
         <div class="image-container">
-            <img src="images/plot1.PNG" alt="Figure 4: Bar graph illustrating differences in specific ERP components for accurate vs. inaccurate outcomes." class="project-image" width="520" height="500">
+            <a href="images/plot1.PNG" target="_blank">
+                <img src="images/plot1.PNG" alt="Figure 4: Bar graph illustrating differences in specific ERP components for accurate vs. inaccurate outcomes." class="project-image" width="520" height="500">
+            </a>
         </div>
     </div>
 </section>
